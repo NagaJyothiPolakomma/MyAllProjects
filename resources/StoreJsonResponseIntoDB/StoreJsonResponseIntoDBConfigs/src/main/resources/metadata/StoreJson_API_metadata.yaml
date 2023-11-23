@@ -1,0 +1,11 @@
+---
+key: "StoreJson_API-1.0.0"
+name : "StoreJson_API"
+displayName : "StoreJson_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/storejson"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

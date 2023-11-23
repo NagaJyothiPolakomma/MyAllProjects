@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/localentry" name="localentry" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property description="getTheData" expression="get-property('normal')" name="data" scope="default" type="OM"/>
+            <!--  <property description="getchildnode" expression="$ctx:data//*[local-name()='name']" name="childnode" scope="default" type="STRING"/> 
+            <property description="getchildnode" expression="$ctx:data//person[1]/*[local-name()='name' or local-name()='age' or local-name()='company']" name="childnode" scope="default" type="STRING"/>
+           <property description="getchildnode" expression="$ctx:data//person[2]/*[local-name()='age']/@village" name="childnode" scope="default" type="STRING"/>-->
+            <property description="getchildnode" expression="$ctx:data//person/*[local-name()='age']" name="childnode" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="$ctx:childnode" name="child"/>
+            </log>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

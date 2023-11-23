@@ -1,0 +1,100 @@
+<data transports="http https" serviceGroup="" serviceNamespace="" name="Jyothids_ds">
+  <description />
+  <resource method="GET" path="/get" returnRequestStatus="true">
+    <description />
+    <call-query href="JyothiSelect" />
+  </resource>
+  <config id="Dss">
+    <property name="driverClassName">com.mysql.jdbc.Driver</property>
+    <property name="url">jdbc:mysql://localhost:3306/vyshu?useSSL=false</property>
+    <property name="username">root</property>
+    <property name="password">Jyothi@2000</property>
+  </config>
+  <resource method="GET" path="/selectgetbyid/{id}">
+    <description />
+    <call-query href="jyothiselectbyid">
+      <with-param name="id" query-param="id" />
+    </call-query>
+  </resource>
+  <query id="JyothiSelect" useConfig="Dss">
+    <sql>select * from storeresponse</sql>
+    <result useColumnNumbers="true" outputType="json"> 
+    {
+    "Data":{
+    "Notification":[{
+      "id":"$1",
+     "name":"$2",
+     "city":"$3"
+    }]
+}
+}
+</result>
+  </query>
+  <query id="jyothiinsertdata" useConfig="Dss">
+    <sql>insert into storeresponseoutput(id,response) values (:id,:response);</sql>
+    <param type="IN" name="id" optional="false" sqlType="STRING" paramType="SCALAR" />
+    <param type="IN" name="response" optional="false" sqlType="STRING" paramType="SCALAR" />
+  </query>
+  <query id="jyothiselectbyid" useConfig="Dss">
+    <sql>select id,name,city from storeresponse where id=:id</sql>
+    <param name="id" sqlType="STRING" paramType="SCALAR" />
+    <result useColumnNumbers="true" outputType="json">
+    {
+      "Notification":
+      {
+      "id":"$1",
+      "name":"$2",
+      "city":"$3"
+        }
+    
+}</result>
+  </query>
+  <query id="JyothiSelectAllData" useConfig="Dss">
+    <sql>select id,response from storeresponseoutput where id=:id;</sql>
+    <param name="id" sqlType="STRING" paramType="SCALAR" />
+    <result useColumnNumbers="true" outputType="json">{
+      "AllData":
+      {
+      "id":"$1",
+      "response":"$2"
+      }
+   }</result>
+  </query>
+  <query id="jyothiinsertAlldata" useConfig="Dss">
+    <sql>insert into store(jsondata) values (:jsondata);</sql>
+    <param type="IN" name="jsondata" optional="false" sqlType="STRING" paramType="SCALAR" />
+  </query>
+  <query id="jyothistoredprocedure" useConfig="Dss">
+    <sql>CALL Insertstoreresponseoutput(:response);</sql>
+    <param type="IN" name="response" optional="false" sqlType="STRING" paramType="SCALAR" />
+  </query>
+  <operation name="insertop">
+    <call-query href="JyothiSelect" />
+  </operation>
+  <operation name="jyothiselectbyid">
+    <call-query href="jyothiselectbyid">
+      <with-param name="id" query-param="id" />
+    </call-query>
+  </operation>
+  <operation name="jyothiinsertOP">
+    <call-query href="jyothiinsertdata">
+      <with-param name="id" query-param="id" />
+      <with-param name="response" query-param="response" />
+    </call-query>
+  </operation>
+  <operation name="JyothiselectAllDataOP">
+    <call-query href="JyothiSelectAllData">
+      <with-param name="id" query-param="id" />
+    </call-query>
+  </operation>
+  <operation name="jyothiinsertalldataop">
+    <call-query href="jyothiinsertAlldata">
+      <with-param name="jsondata" query-param="jsondata" />
+    </call-query>
+  </operation>
+  <operation name="jyothistoredprocedureOP">
+    <call-query href="jyothistoredprocedure">
+      <with-param name="response" query-param="response" />
+    </call-query>
+  </operation>
+</data>

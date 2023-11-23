@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="processIDGenerateSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <script language="js"><![CDATA[var uuid = java.util.UUID.randomUUID().toString();
+         mc.setProperty("process_id", uuid);]]></script>
+    <!-- Log child ID for step 1 -->
+    <log level="custom">
+        <property expression="$ctx:process_id" name="process_id - Step 1"/>
+    </log>
+</sequence>

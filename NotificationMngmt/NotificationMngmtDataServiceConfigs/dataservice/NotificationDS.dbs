@@ -1,0 +1,66 @@
+<data transports="http https" serviceGroup="" serviceNamespace="" name="NotificationDS" serviceStatus="active">
+  <description />
+  <config id="MysqlConnection">
+    <property name="driverClassName">com.mysql.cj.jdbc.Driver</property>
+    <property name="url">jdbc:mysql://localhost:3306/vyshu</property>
+    <property name="username">root</property>
+    <property name="password">Jyothi@2000</property>
+  </config>
+  <resource method="GET" path="/get-all">
+    <description />
+    <call-query href="ReadAllNotificationsQuery" />
+  </resource>
+  <resource method="GET" path="/getById/{Tempate_id}">
+    <description />
+    <call-query href="ReadNotificationByIdQuery">
+      <with-param name="Tempate_id" query-param="Tempate_id" />
+    </call-query>
+  </resource>
+  <operation name="getAll">
+    <call-query href="ReadNotificationByIdQuery">
+      <with-param name="Tempate_id" query-param="Tempate_id" />
+    </call-query>
+  </operation>
+  <query id="ReadAllNotificationsQuery" useConfig="MysqlConnection">
+    <sql>select Tempate_id, Msg_template, Output_template,parameters from getmessages;</sql>
+    <result useColumnNumbers="true" outputType="json">{
+  "Result":{
+    "Notification":[{
+      "Tempate_id":"$1",
+     "Msg_template":"$2", 
+"Output_template":"$3",
+"parameters":"$4" 
+ }
+  ]}
+}</result>
+  </query>
+  <query id="ReadNotificationByIdQuery" useConfig="MysqlConnection">
+    <sql>select Tempate_id, Msg_template, Output_template,parameters from getmessages where Tempate_id=:Tempate_id</sql>
+    <param name="Tempate_id" paramType="SCALAR" sqlType="STRING" />
+    <result useColumnNumbers="true" outputType="json">{
+    "Notification":{
+      "Tempate_id":"$1",
+     "Msg_template":"$2", 
+"Output_template":"$3",
+"parameters":"$4"  
+ }}
+  </result>
+  </query>
+  <query id="ReadDataBasedOnId" useConfig="MysqlConnection">
+    <sql>select Tempate_id, Msg_template, Output_template,parameters from getmessages where Tempate_id=?</sql>
+    <param name="Tempate_id" paramType="SCALAR" sqlType="STRING" />
+    <result outputType="json">{
+    "Notification":{
+      "Tempate_id":"$1",
+     "Msg_template":"$2", 
+"Output_template":"$3",
+"parameters":"$4"  
+ }}</result>
+  </query>
+  <resource method="GET" path="/getbypost">
+    <description />
+    <call-query href="ReadDataBasedOnId">
+      <with-param name="Tempate_id" query-param="Tempate_id" />
+    </call-query>
+  </resource>
+</data>

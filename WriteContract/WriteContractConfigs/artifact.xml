@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="WiteContract_proxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/WiteContract_proxy.xml</file>
+    </artifact>
+    <artifact name="WiteContract_proxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/WiteContract_proxy_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="contract_write_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/contract_write_api.xml</file>
+    </artifact>
+    <artifact name="contract_write_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/contract_write_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="contract_write_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/contract_write_api_metadata.yaml</file>
+    </artifact>
+</artifacts>

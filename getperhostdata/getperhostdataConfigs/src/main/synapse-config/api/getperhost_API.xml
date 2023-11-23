@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/getperhost" name="getperhost_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property name="CACHE_ID" scope="default" type="STRING" value="samplecach"/>
+            <log level="custom">
+                <property expression="get-property('CACHE_ID')" name="cache"/>
+            </log>
+            <switch source="get-property('CACHE_ID')">
+                <case regex="^samplecache$">
+                    <log level="custom">
+                        <property name="switch" value="inside the switch"/>
+                    </log>
+                    <cache collector="false" hashGenerator="org.wso2.carbon.mediator.cache.digest.DOMHASHGenerator" id="samplecache" maxMessageSize="2000" scope="per-host" timeout="5">
+                        <onCacheHit>
+                            <log level="custom">
+                                <property name="log" value="data retrivesd succesfully"/>
+                            </log>
+                            <respond/>
+                        </onCacheHit>
+                        <implementation maxSize="1000" type="memory"/>
+                    </cache>
+                    <log level="custom">
+                        <property name="after cache" value="after cache"/>
+                    </log>
+                </case>
+                <default>
+                    <log level="custom">
+                        <property name="Default" value="Invalid cache"/>
+                    </log>
+                    <respond/>
+                </default>
+            </switch>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

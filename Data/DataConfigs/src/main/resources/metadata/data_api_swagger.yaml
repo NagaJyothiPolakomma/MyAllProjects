@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: data_api
+  description: API Definition of data_api
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/datdatabseapi
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/datdatabseapi" name="data_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <file.read configKey="FILE_CONNECTION_1">
+                <path>E:/jsondata/AlErrorCodeData.csv</path>
+                <readMode>Complete File</readMode>
+                <startLineNum>0</startLineNum>
+                <endLineNum>0</endLineNum>
+                <lineNum>0</lineNum>
+                <contentType>text/plain</contentType>
+                <includeResultTo>Message Body</includeResultTo>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+            </file.read>
+            <datamapper config="gov:datamapper/data.dmc" inputSchema="gov:datamapper/data_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/data_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/data_xsltStyleSheet.xml"/>
+            <log/>
+            <iterate expression="//products" sequential="true">
+                <target>
+                    <sequence>
+                        <propertyGroup>
+                            <property expression="json-eval(products.System_name)" name="System_name" scope="default" type="STRING"/>
+                            <property expression="json-eval(products.Error_Code)" name="Error_Code" scope="default" type="STRING"/>
+                            <property expression="json-eval(products.Error_Name)" name="Error_Name" scope="default" type="STRING"/>
+                            <property expression="json-eval(products.Description)" name="Description" scope="default" type="STRING"/>
+                        </propertyGroup>
+                        <log level="custom">
+                            <property expression="$ctx:System_name" name="System_name"/>
+                            <property expression="$ctx:Error_Code" name="Error_Code"/>
+                            <property expression="$ctx:Error_Name" name="Error_Name"/>
+                            <property expression="$ctx:Description" name="Description"/>
+                        </log>
+                        <dbreport>
+                            <connection>
+                                <pool>
+                                    <driver>com.mysql.jdbc.Driver</driver>
+                                    <url>jdbc:mysql://localhost:3306/common_errors</url>
+                                    <user>root</user>
+                                    <password>Jyothi@2000</password>
+                                </pool>
+                            </connection>
+                            <statement>
+                                <sql><![CDATA[insert into common_errors.errorcodes(System_name,Error_Code,Error_Name,Description,Updated_date) values(?,?,?,?,NOW())]]></sql>
+                                <parameter expression="$ctx:System_name" type="VARCHAR"/>
+                                <parameter expression="$ctx:Error_Code" type="VARCHAR"/>
+                                <parameter expression="$ctx:Error_Name" type="VARCHAR"/>
+                                <parameter expression="$ctx:Description" type="VARCHAR"/>
+                            </statement>
+                        </dbreport>
+                    </sequence>
+                </target>
+            </iterate>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$body"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

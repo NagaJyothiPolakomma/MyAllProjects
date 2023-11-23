@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_hOMdwEb2Ee6vscCU-W9Nww" type="Esb" name="File_Tracking_API" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_hPe3MEb2Ee6vscCU-W9Nww" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hPfeQEb2Ee6vscCU-W9Nww" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_Q1cRMEb3Ee6vscCU-W9Nww" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Q1c4QEb3Ee6vscCU-W9Nww" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_Q1qToEb3Ee6vscCU-W9Nww" type="3669">
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_Q1qToUb3Ee6vscCU-W9Nww"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Q1qTokb3Ee6vscCU-W9Nww" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_Q1qTo0b3Ee6vscCU-W9Nww"/>
+            <element xmi:type="esb:APIResource" href="File_Tracking_API.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q1qTpEb3Ee6vscCU-W9Nww" x="100" y="96"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="File_Tracking_API.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q1cRMUb3Ee6vscCU-W9Nww" x="3075" y="94"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_hPe3MUb2Ee6vscCU-W9Nww"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hPe3Mkb2Ee6vscCU-W9Nww" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_hPe3M0b2Ee6vscCU-W9Nww"/>
+    <element xmi:type="esb:EsbServer" href="File_Tracking_API.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hPe3NEb2Ee6vscCU-W9Nww"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_hOMdwUb2Ee6vscCU-W9Nww"/>
+  <element xmi:type="esb:EsbDiagram" href="File_Tracking_API.esb#/"/>
+</notation:Diagram>

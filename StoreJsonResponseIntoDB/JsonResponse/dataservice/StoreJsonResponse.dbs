@@ -1,0 +1,27 @@
+<data name="StoreJsonResponse" serviceNamespace="" serviceGroup="" transports="http https">
+  <description />
+  <config id="StoreJson">
+    <property name="driverClassName">com.mysql.jdbc.Driver</property>
+    <property name="url">jdbc:mysql://localhost:3306/vyshu?useSSL=false</property>
+    <property name="username">root</property>
+    <property name="password">Jyothi@2000</property>
+  </config>
+  <query id="GetTotalData" useConfig="StoreJson">
+    <sql>select * from storeresponse</sql>
+    <result outputType="json" useColumnNumbers="true">
+    {
+  "Data":{
+"id":"$1",
+"name":"$2",
+"city":"$3"
+
+}
+
+}
+</result>
+  </query>
+  <resource method="GET" path="/get">
+    <description />
+    <call-query href="GetTotalData" />
+  </resource>
+</data>

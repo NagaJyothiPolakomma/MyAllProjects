@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_cVt8AIkaEe6UhM0uyokyxQ" type="Esb" name="CacheDB_API" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_cWSjwIkaEe6UhM0uyokyxQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_cWSjxYkaEe6UhM0uyokyxQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_GqZ3YIkgEe6UhM0uyokyxQ" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_GqZ3YokgEe6UhM0uyokyxQ" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_Gqf-AIkgEe6UhM0uyokyxQ" type="3669">
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_Gqf-AYkgEe6UhM0uyokyxQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Gqf-AokgEe6UhM0uyokyxQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_Gqf-A4kgEe6UhM0uyokyxQ"/>
+            <element xmi:type="esb:APIResource" href="CacheDB_API.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Gqf-BIkgEe6UhM0uyokyxQ" x="289" y="135"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="CacheDB_API.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GqZ3YYkgEe6UhM0uyokyxQ" x="6124" y="133"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_cWSjwYkaEe6UhM0uyokyxQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_cWSjwokaEe6UhM0uyokyxQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_cWSjw4kaEe6UhM0uyokyxQ"/>
+    <element xmi:type="esb:EsbServer" href="CacheDB_API.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cWSjxIkaEe6UhM0uyokyxQ"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_cVt8AYkaEe6UhM0uyokyxQ"/>
+  <element xmi:type="esb:EsbDiagram" href="CacheDB_API.esb#/"/>
+</notation:Diagram>

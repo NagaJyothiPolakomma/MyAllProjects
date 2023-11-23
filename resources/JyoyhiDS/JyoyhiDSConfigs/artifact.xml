@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="jyothi_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/jyothi_api.xml</file>
+    </artifact>
+    <artifact name="jyothi_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jyothi_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="jyothi_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jyothi_api_metadata.yaml</file>
+    </artifact>
+    <artifact name="ConvertXmlToJsonSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ConvertXmlToJsonSequence.xml</file>
+    </artifact>
+    <artifact name="XmlToJsonSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/XmlToJsonSequence.xml</file>
+    </artifact>
+    <artifact name="jyothids_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/jyothids_api.xml</file>
+    </artifact>
+    <artifact name="jyothids_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jyothids_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="jyothids_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jyothids_api_metadata.yaml</file>
+    </artifact>
+    <artifact name="dynamic_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/dynamic_api.xml</file>
+    </artifact>
+    <artifact name="dynamic_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/dynamic_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="dynamic_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/dynamic_api_metadata.yaml</file>
+    </artifact>
+</artifacts>

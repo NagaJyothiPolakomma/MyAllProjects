@@ -1,0 +1,10 @@
+---
+key: "WiteContract_proxy_proxy-1.0.0"
+name : "WiteContract_proxy"
+displayName : "WiteContract_proxy"
+description: "Sample Proxy Service"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/services/WiteContract_proxy"
+definitionType: "WSDL1"
+securityType: "BASIC"
+mutualSSLEnabled: false

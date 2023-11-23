@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/notification" name="Notification_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <propertyGroup description="Template_id">
+                <property expression="json-eval($.Tempate_id)" name="Tempate_id" scope="default" type="STRING"/>
+            </propertyGroup>
+            <dataServiceCall serviceName="NotificationDS">
+                <operations type="single">
+                    <operation name="getAll">
+                        <param evaluator="xml" expression="$ctx:Tempate_id" name="Tempate_id"/>
+                    </operation>
+                </operations>
+                <source type="inline"/>
+                <target type="body"/>
+            </dataServiceCall>
+            <propertyGroup description="responsefromDataservice">
+                <property expression="json-eval($.Notification.Msg_template)" name="Msg_template" scope="default" type="STRING"/>
+                <property expression="json-eval($.Notification.parameters)" name="parameters" scope="default" type="STRING"/>
+            </propertyGroup>
+            <log>
+                <property expression="$ctx:Msg_template" name="Msg"/>
+            </log>
+            <script language="js"><![CDATA[var log=mc.getServiceLog();
+      var request = mc.getProperty("Msg_template");
+      var value = mc.getProperty("parameters").split(","); // Split the comma-separated values
+      for (var i = 0; i < value.length; i++) 
+      {
+       var dynamicValue = value[i].trim();
+       log.info(dynamicValue);
+        log.info(mc.getProperty(dynamicValue));
+         var placeholder = "@" + dynamicValue;
+        request = request.replace(placeholder, mc.getProperty(dynamicValue));
+      }
+
+      mc.setProperty("modifiedPayload", request); //Set the modified payload as a property for logging
+      log.info(request);]]></script>
+            <log level="custom">
+                <property expression="get-property('request')" name="Modified Payload"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

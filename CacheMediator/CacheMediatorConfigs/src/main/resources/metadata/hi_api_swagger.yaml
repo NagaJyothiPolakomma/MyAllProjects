@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: hi_api
+  description: API Definition of hi_api
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/hi
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

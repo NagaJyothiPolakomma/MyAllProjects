@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_VGsbIDAmEe6vMJiSCiIs-Q" type="Esb" name="SFDCFault_SEQ" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_VIDtEDAmEe6vMJiSCiIs-Q" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_VIEUIDAmEe6vMJiSCiIs-Q" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_VU3aADAmEe6vMJiSCiIs-Q" type="3614">
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_VU3aATAmEe6vMJiSCiIs-Q"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_VU3aAjAmEe6vMJiSCiIs-Q" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_VU3aAzAmEe6vMJiSCiIs-Q"/>
+        <element xmi:type="esb:Sequences" href="SFDCFault_SEQ.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VU3aBDAmEe6vMJiSCiIs-Q" width="195" height="125"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_VIDtETAmEe6vMJiSCiIs-Q"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_VIDtEjAmEe6vMJiSCiIs-Q" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_VIDtEzAmEe6vMJiSCiIs-Q"/>
+    <element xmi:type="esb:EsbServer" href="SFDCFault_SEQ.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VIDtFDAmEe6vMJiSCiIs-Q"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_VGsbITAmEe6vMJiSCiIs-Q"/>
+  <element xmi:type="esb:EsbDiagram" href="SFDCFault_SEQ.esb#/"/>
+</notation:Diagram>

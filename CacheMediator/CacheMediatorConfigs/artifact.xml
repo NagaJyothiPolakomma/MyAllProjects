@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Cachemediator_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Cachemediator_API.xml</file>
+    </artifact>
+    <artifact name="Cachemediator_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Cachemediator_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Cachemediator_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Cachemediator_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="hi_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/hi_api.xml</file>
+    </artifact>
+    <artifact name="hi_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/hi_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="hi_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/hi_api_metadata.yaml</file>
+    </artifact>
+</artifacts>

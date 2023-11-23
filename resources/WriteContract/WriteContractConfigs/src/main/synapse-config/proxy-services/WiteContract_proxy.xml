@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="WiteContract_proxy" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <!-- Extract <con:inputAttributes> using XPath -->
+            <property expression="//con:inputAttributes" name="inputAttributes" scope="default" type="STRING" xmlns:con="http://ericsson.com/services/ws_CIL_7/contractwrite"/>
+        </inSequence>
+        <outSequence>
+            <!-- You can process or log the extracted attributes here -->
+            <log level="full">
+                <property expression="$ctx:inputAttributes" name="ExtractedInputAttributes"/>
+            </log>
+        </outSequence>
+        <faultSequence/>
+    </target>
+</proxy>

@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: get_bscs_number_details_api
+  description: API Definition of get_bscs_number_details_api
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/bscsnumber
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

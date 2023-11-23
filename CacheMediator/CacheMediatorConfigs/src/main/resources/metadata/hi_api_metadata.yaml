@@ -1,0 +1,11 @@
+---
+key: "hi_api-1.0.0"
+name : "hi_api"
+displayName : "hi_api"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/hi"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: Cache_db_APi
+  description: API Definition of Cache_db_APi
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/cachedb
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/cachedb" name="Cache_db_APi" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log level="custom">
+                <property name="log" value="before 1 st cache"/>
+            </log>
+            <cache collector="false" hashGenerator="org.wso2.carbon.mediator.cache.digest.DOMHASHGenerator" id="cache" maxMessageSize="2000" scope="per-host" timeout="5">
+                <onCacheHit>
+                    <log level="custom">
+                        <property name="cache" value="inside first cache"/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+"eid":"$1",&#xd;
+"empid":"$2",&#xd;
+"ename":"$3"&#xd;
+}</format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('eid')"/>
+                            <arg evaluator="xml" expression="get-property('empid')"/>
+                            <arg evaluator="xml" expression="get-property('ename')"/>
+                        </args>
+                    </payloadFactory>
+                    <respond/>
+                </onCacheHit>
+                <implementation maxSize="1000" type="memory"/>
+            </cache>
+            <log level="custom">
+                <property name="db" value="befor db"/>
+            </log>
+            <dblookup>
+                <connection>
+                    <pool>
+                        <driver>com.mysql.jdbc.Driver</driver>
+                        <url>jdbc:mysql://localhost:3306/vyshu?useSSL=false</url>
+                        <user>root</user>
+                        <password>Jyothi@2000</password>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql><![CDATA[select * from employee]]></sql>
+                    <result column="empid" name="empid"/>
+                    <result column="eid" name="eid"/>
+                    <result column="ename" name="ename"/>
+                </statement>
+            </dblookup>
+            <log level="custom">
+                <property name="db" value="after db"/>
+            </log>
+            <property name="RESPONSE" scope="default" type="STRING" value="true"/>
+            <cache collector="true" scope="per-host"/>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"eid":"$1",&#xd;
+"empid":"$2",&#xd;
+"ename":"$3"&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('eid')"/>
+                    <arg evaluator="xml" expression="get-property('empid')"/>
+                    <arg evaluator="xml" expression="get-property('ename')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/bscsnumber" name="get_bscs_number_details_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <!-- Continue with your normal processing here -->
+            <property description="accountid" expression="json-eval($.account_id)" name="account_id" scope="default" type="STRING"/>
+            <property description="nic" expression="json-eval($.nic)" name="nic" scope="default" type="STRING"/>
+            <log level="full">
+                <property expression="$ctx:account_id" name="account_id"/>
+                <property expression="$ctx:nic" name="nic"/>
+            </log>
+            <property description="ErrorcodeMap" name="errorCodeMap" scope="default" type="STRING" value="{&quot;ZERO&quot;:0,     &quot;VALIDATION&quot;: 1,     &quot;INVALID_USER&quot;: 6,     &quot;INVALID_PASS&quot;: 7,     &quot;INVALID_IP&quot;: 8,     &quot;INTERNAL_SERVER_ERROR&quot;: 2,     &quot;INVALID_ACCOUNT&quot;: 135 }"/>
+            <log>
+                <property name="enter the dragon " value="enter  into filter mediator "/>
+            </log>
+            <filter xpath="not(string-length(get-property('account_id')) > 0) and not(string-length(get-property('nic')) > 0)">
+                <then>
+                    <property expression="$ctx:errorCodeMap.VALIDATION" name="errorCode" scope="default" type="STRING"/>
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+"success":"false",&#xd;
+"errorcode":"$1",&#xd;
+"error_message":"Please provide account id or nic"&#xd;
+}</format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:errorcode"/>
+                        </args>
+                    </payloadFactory>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="422"/>
+                </then>
+                <else>
+                    <filter xpath="string-length($ctx:account_id) > 0">
+                        <then>
+                            <filter xpath="contains($ctx:account_id, '.')">
+                                <then>
+                                    <dblookup description="call query as UOL_user_custcode_query_001">
+                                        <connection>
+                                            <pool>
+                                                <driver>oracle.jdbc.driver.OracleDriver</driver>
+                                                <url>jdbc:oracle:thin:@172.16.110.237:1521/bscsr17</url>
+                                                <user>sysadm</user>
+                                                <password>SYSADM2020</password>
+                                            </pool>
+                                        </connection>
+                                        <statement>
+                                            <sql><![CDATA[select * from UOL_user_custcode_query_001 where custcode=?]]></sql>
+                                            <parameter expression="$ctx:account_id" type="VARCHAR"/>
+                                        </statement>
+                                    </dblookup>
+                                    <property expression="$body/*" name="out_query" scope="default" type="STRING"/>
+                                    <payloadFactory media-type="json">
+                                        <format>{&#xd;
+  "UOL_user_custcode_query_001":"$1"&#xd;
+}</format>
+                                        <args>
+                                            <arg evaluator="xml" expression="$ctx:out_query"/>
+                                        </args>
+                                    </payloadFactory>
+                                </then>
+                                <else>
+                                    <dblookup description="cal query as UOL_user_query_002  ">
+                                        <connection>
+                                            <pool>
+                                                <driver>oracle.jdbc.driver.OracleDriver</driver>
+                                                <url>jdbc:oracle:thin:@172.16.110.237:1521/bscsr17</url>
+                                                <user>sysadm</user>
+                                                <password>SYSADM2020</password>
+                                            </pool>
+                                        </connection>
+                                        <statement>
+                                            <sql><![CDATA[select * from UOL_user_query_002 where custcode=?]]></sql>
+                                            <parameter expression="$ctx:account_id" type="VARCHAR"/>
+                                        </statement>
+                                    </dblookup>
+                                    <property expression="$body/*" name="out_query" scope="default" type="STRING"/>
+                                    <payloadFactory media-type="json">
+                                        <format>{&#xd;
+  "UOL_user_query_002 ":"$1"&#xd;
+}</format>
+                                        <args>
+                                            <arg evaluator="xml" expression="$ctx:out_query"/>
+                                        </args>
+                                    </payloadFactory>
+                                </else>
+                            </filter>
+                            <filter xpath="string-length($ctx:out_query) = 0">
+                                <then>
+                                    <payloadFactory media-type="json">
+                                        <format> {&#xd;
+   "success":" false",
+    "error_code": "$1",
+   "error_message": "Unable to find any Records for this Account ID / NIC"
+   }
+                        </format>
+                                        <args>
+                                            <arg evaluator="xml" expression="$ctx:errorcode.INVALID_ACCOUNT"/>
+                                        </args>
+                                    </payloadFactory>
+                                    <property name="HTTP_SC" scope="axis2" type="STRING" value="400"/>
+                                    <respond/>
+                                </then>
+                                <else/>
+                            </filter>
+                        </then>
+                        <else>
+                            <dblookup description="call query as UOL_nic_con_query_003">
+                                <connection>
+                                    <pool>
+                                        <driver/>
+                                        <url/>
+                                        <user/>
+                                        <password/>
+                                    </pool>
+                                </connection>
+                            </dblookup>
+                        </else>
+                    </filter>
+                </else>
+            </filter>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,11 @@
+---
+key: "Cache_db_APi-1.0.0"
+name : "Cache_db_APi"
+displayName : "Cache_db_APi"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/cachedb"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

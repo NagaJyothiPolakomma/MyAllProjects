@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dy" name="dynamic_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <header name="Action" scope="default" value="urn:contractRead"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:con="http://ericsson.com/services/ws_CIL_7/contractread" xmlns:ses="http://ericsson.com/services/ws_CIL_7/sessionchange" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Header>
+                            <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                                <wsse:UsernameToken wsu:Id="UsernameToken-467947563AD14364B916928530129321">
+                                    <wsse:Username>ADMX</wsse:Username>
+                                    <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ADMX</wsse:Password>
+                                </wsse:UsernameToken>
+                            </wsse:Security>
+                        </soapenv:Header>
+                        <soapenv:Body>
+                            <con:contractReadRequest>
+                                <!--You may enter the following 2 items in any order-->
+                                <!--Optional:-->
+                                <con:inputAttributes>
+                                    <!--You may enter the following 3 items in any order-->
+                                    <!--Optional:-->
+                                    <con:coId>82921</con:coId>
+                                    <!--Optional:-->
+                                    <con:coIdPub/>
+                                    <!--Optional:-->
+                                    <con:syncWithDb/>
+                                </con:inputAttributes>
+                                <!--Optional:-->
+                                <con:sessionChangeRequest>
+                                    <!--Optional:-->
+                                    <ses:values>
+                                        <!--1 or more repetitions:-->
+                                        <ses:item>
+                                            <!--You may enter the following 2 items in any order-->
+                                            <ses:key>BU_ID</ses:key>
+                                            <ses:value>2</ses:value>
+                                        </ses:item>
+                                    </ses:values>
+                                </con:sessionChangeRequest>
+                            </con:contractReadRequest>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args/>
+            </payloadFactory>
+            <call>
+                <endpoint>
+                    <address format="soap11" uri="http://172.16.110.237:4080/wsi/services">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </address>
+                </endpoint>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

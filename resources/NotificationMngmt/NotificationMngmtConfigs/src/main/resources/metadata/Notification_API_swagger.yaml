@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: Notification_API
+  description: API Definition of Notification_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/notification
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

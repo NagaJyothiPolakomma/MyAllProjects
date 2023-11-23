@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="BSCSSalesforceCustomerService" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/BSCSSalesforceCustomerService.xml</file>
+    </artifact>
+    <artifact name="BSCSSalesforceCustomerService_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/BSCSSalesforceCustomerService_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="SFDCFault_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SFDCFault_SEQ.xml</file>
+    </artifact>
+    <artifact name="makeFault" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/makeFault.xml</file>
+    </artifact>
+    <artifact name="ContractsSearchService_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/ContractsSearchService_EP.xml</file>
+    </artifact>
+    <artifact name="CustomerRetrieveService_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/CustomerRetrieveService_EP.xml</file>
+    </artifact>
+</artifacts>

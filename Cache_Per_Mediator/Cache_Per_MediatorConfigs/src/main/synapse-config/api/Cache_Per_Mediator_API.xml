@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/cachepermediator" name="Cache_Per_Mediator_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log level="custom">
+                <property name="Log" value="insequnce cache log"/>
+            </log>
+            <cache collector="false" hashGenerator="org.wso2.carbon.mediator.cache.digest.DOMHASHGenerator" id="intheCache" maxMessageSize="2000" scope="per-mediator" timeout="5">
+                <onCacheHit>
+                    <log level="custom">
+                        <property name="finder" value="finder cache"/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+"traceid":"$1"&#xd;
+&#xd;
+}</format>
+                        <args>
+                            <arg evaluator="json" expression="$.headers.X-Amzn-Trace-Id"/>
+                        </args>
+                    </payloadFactory>
+                    <respond/>
+                </onCacheHit>
+                <implementation maxSize="1000" type="memory"/>
+            </cache>
+            <send>
+                <endpoint>
+                    <address uri="https://httpbin.org/get">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </address>
+                </endpoint>
+            </send>
+        </inSequence>
+        <outSequence>
+            <cache collector="true"/>
+            <log level="custom">
+                <property name="Collector log" value="Collector log"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"traceid":"$1"&#xd;
+&#xd;
+}</format>
+                <args>
+                    <arg evaluator="json" expression="$.headers.X-Amzn-Trace-Id"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,11 @@
+---
+key: "dynamic_api-1.0.0"
+name : "dynamic_api"
+displayName : "dynamic_api"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/dy"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

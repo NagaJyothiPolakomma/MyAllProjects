@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/send-sms" name="SMSAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <script language="js"><![CDATA[var uuid = java.util.UUID.randomUUID().toString();
+         mc.setProperty("process_id", uuid);]]></script>
+            <!-- Log child ID for step 1 -->
+            <log level="custom">
+                <property expression="$ctx:process_id" name="process_id - Step 1"/>
+            </log>
+            <propertyGroup>
+                <property expression="json-eval($.msisdn)" name="msisdn" scope="default" type="STRING"/>
+                <property expression="json-eval($.cust_name)" name="cust_name" scope="default" type="STRING"/>
+                <property expression="json-eval($.id)" name="id" scope="default" type="STRING"/>
+            </propertyGroup>
+            <dataServiceCall description="read notifications from d" serviceName="NotificationsDS">
+                <operations type="single">
+                    <operation name="getBasedonId">
+                        <param evaluator="xml" expression="$ctx:id" name="id"/>
+                    </operation>
+                </operations>
+                <source type="inline"/>
+                <target type="body"/>
+            </dataServiceCall>
+            <!--   <filter description="DSS result validation" regex="true" source="fn:string-length($body) > 0">
+                <then>
+                    <log level="custom">
+                        <property name="Then Block==>" value="True"/>
+                        <property expression="get-property('MessageID')" name="reqID"/>
+                    </log>
+                    <call>
+                        <endpoint key="Backend_mock_EP"/>
+                    </call>
+                    <log level="custom">
+                        <property expression="get-property('MessageID')" name="ResID"/>
+                    </log>
+                    <call>
+                        <endpoint key="Backend_mock_EP"/>
+                    </call>
+                    <log level="custom">
+                        <property expression="get-property('MessageID')" name="ResID"/>
+                    </log>
+                </then>
+                <else>
+                    <log level="custom">
+                        <property name="Else Block==>" value="False"/>
+                    </log>
+                </else>
+            </filter>  -->
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

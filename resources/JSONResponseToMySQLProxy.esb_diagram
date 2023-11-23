@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_eZP_8DQpEe6iQMHXmDaHMg" type="Esb" name="JSONResponseToMySQLProxy" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_eZ_m0DQpEe6iQMHXmDaHMg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_eZ_m1TQpEe6iQMHXmDaHMg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_ef6ooDQpEe6iQMHXmDaHMg" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_ef6opTQpEe6iQMHXmDaHMg" type="5003"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_ef6ooTQpEe6iQMHXmDaHMg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_ef6oojQpEe6iQMHXmDaHMg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_ef6oozQpEe6iQMHXmDaHMg"/>
+        <element xmi:type="esb:ProxyService" href="JSONResponseToMySQLProxy.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ef6opDQpEe6iQMHXmDaHMg" width="300" height="400"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_eZ_m0TQpEe6iQMHXmDaHMg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_eZ_m0jQpEe6iQMHXmDaHMg" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_eZ_m0zQpEe6iQMHXmDaHMg"/>
+    <element xmi:type="esb:EsbServer" href="JSONResponseToMySQLProxy.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eZ_m1DQpEe6iQMHXmDaHMg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_eZP_8TQpEe6iQMHXmDaHMg"/>
+  <element xmi:type="esb:EsbDiagram" href="JSONResponseToMySQLProxy.esb#/"/>
+</notation:Diagram>

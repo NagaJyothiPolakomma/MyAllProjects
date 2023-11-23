@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: StoreJson_API
+  description: API Definition of StoreJson_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/storejson
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/storejson" name="StoreJson_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <propertyGroup>
+                <property expression="json-eval($)" name="request" scope="default" type="STRING"/>
+                <property expression="json-eval($.id)" name="id" scope="default" type="STRING"/>
+            </propertyGroup>
+            <log>
+                <property expression="$ctx:request" name="log"/>
+                <property expression="$ctx:id" name="log"/>
+            </log>
+            <dataServiceCall serviceName="">
+                <operations type="batch">
+                    <operation name="inserqueryOp">
+                        <param evaluator="xml" expression="$ctx:id" name="id"/>
+                        <param evaluator="xml" expression="$ctx:request" name="request"/>
+                        <param name="response" value="property_value"/>
+                    </operation>
+                </operations>
+                <source type="inline"/>
+                <target type="body"/>
+            </dataServiceCall>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

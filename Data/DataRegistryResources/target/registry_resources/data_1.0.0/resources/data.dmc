@@ -1,0 +1,26 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf = 0;
+outputroot =  {};
+outputroot.products =  [];
+
+for(i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf in inputroot){
+outputroot.products[count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf] =  {};
+outputroot.products[count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf]['S.no'] = inputroot[i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf]['﻿S.no'];
+outputroot.products[count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].System_name = inputroot[i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].System_name;
+outputroot.products[count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].Error_Code = inputroot[i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].Error_Code;
+outputroot.products[count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].Error_Name = inputroot[i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].Error_Name;
+outputroot.products[count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].Description = inputroot[i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf].Descrption;
+
+count_i_inputroot_b8e3e9f3_2ee8_4bbc_826c_0f6c8f626edf++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+

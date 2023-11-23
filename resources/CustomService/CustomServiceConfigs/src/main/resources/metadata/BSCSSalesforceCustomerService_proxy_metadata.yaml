@@ -1,0 +1,10 @@
+---
+key: "BSCSSalesforceCustomerService_proxy-1.0.0"
+name : "BSCSSalesforceCustomerService"
+displayName : "BSCSSalesforceCustomerService"
+description: "Sample Proxy Service"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/services/BSCSSalesforceCustomerService"
+definitionType: "WSDL1"
+securityType: "BASIC"
+mutualSSLEnabled: false

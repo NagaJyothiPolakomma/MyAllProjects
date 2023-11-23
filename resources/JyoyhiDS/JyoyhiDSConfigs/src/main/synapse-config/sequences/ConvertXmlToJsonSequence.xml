@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ConvertXmlToJsonSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="get-property('payload')" name="xmlPayload" scope="default" type="STRING"/>
+    <enrich>
+        <source clone="true" type="body"/>
+        <target property="jsonPayload" type="property"/>
+    </enrich>
+    <log level="custom">
+        <property expression="$ctx:jsonPayload" name="jsonPayload"/>
+    </log>
+</sequence>
