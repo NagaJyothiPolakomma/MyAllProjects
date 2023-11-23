@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/jyothi" name="jyothi_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/jyo">
+        <inSequence>
+            <property expression="json-eval($.id)" name="id" scope="default" type="STRING"/>
+            <dataServiceCall serviceName="Jyothids_ds">
+                <operations type="single">
+                    <operation name="jyothiselectbyid">
+                        <param evaluator="xml" expression="$ctx:id" name="id"/>
+                    </operation>
+                </operations>
+                <source type="inline"/>
+                <target type="body"/>
+            </dataServiceCall>
+            <payloadFactory media-type="xml">
+                <format>
+                    <data xmlns="">$1</data>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="$body/*"/>
+                </args>
+            </payloadFactory>
+            <log level="full">
+                <property expression="$body/*" name="body"/>
+            </log>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"Jsondata":$1&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$body/*"/>
+                </args>
+            </payloadFactory>
+            <property expression="json-eval($.Jsondata)" name="mySql" scope="default" type="STRING"/>
+            <log level="full">
+                <property expression="$ctx:mySql" name="mysql"/>
+            </log>
+            <class name="com.jyo.JsonResponse"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

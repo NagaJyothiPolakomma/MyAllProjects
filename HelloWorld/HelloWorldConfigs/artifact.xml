@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Greeting_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Greeting_API.xml</file>
+    </artifact>
+    <artifact name="Greeting_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Greeting_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Greeting_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Greeting_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="ExampleSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ExampleSequence.xml</file>
+    </artifact>
+    <artifact name="TrpExample" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/TrpExample.xml</file>
+    </artifact>
+    <artifact name="TrpExample_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/TrpExample_swagger.yaml</file>
+    </artifact>
+    <artifact name="TrpExample_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/TrpExample_metadata.yaml</file>
+    </artifact>
+    <artifact name="getproxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/getproxy.xml</file>
+    </artifact>
+    <artifact name="getproxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/getproxy_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="normal" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/normal.xml</file>
+    </artifact>
+    <artifact name="localentry" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/localentry.xml</file>
+    </artifact>
+    <artifact name="localentry_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/localentry_swagger.yaml</file>
+    </artifact>
+    <artifact name="localentry_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/localentry_metadata.yaml</file>
+    </artifact>
+</artifacts>

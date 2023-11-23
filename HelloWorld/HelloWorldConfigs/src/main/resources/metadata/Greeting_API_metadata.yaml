@@ -1,0 +1,11 @@
+---
+key: "Greeting_API-1.0.0"
+name : "Greeting_API"
+displayName : "Greeting_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/greet"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

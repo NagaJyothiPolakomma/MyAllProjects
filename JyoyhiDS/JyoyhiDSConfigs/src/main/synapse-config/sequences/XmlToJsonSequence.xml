@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="XmlToJsonSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property description="get id" expression="json-eval($.id)" name="id" scope="default" type="STRING"/>
+    <log level="custom">
+        <property expression="$ctx:id" name="id"/>
+    </log>
+    <enrich>
+        <source clone="true" type="body"/>
+        <target property="xmlResponse" type="property"/>
+    </enrich>
+    <script language="js"><![CDATA[var xmlResponse = mc.getProperty("xmlResponse");
+        var jsonString = XMLResponseToJsonString('xmlResponse');
+        mc.setPayloadJSON(jsonString);]]></script>
+    <property expression="json-eval($)" name="jsonResponse" scope="default" type="STRING"/>
+    <log level="custom">
+        <property expression="$ctx:jsonResponse" name="jsonResponse"/>
+    </log>
+    <dbreport>
+        <connection>
+            <pool>
+                <driver>com.mysql.jdbc.Driver</driver>
+                <url>jdbc:mysql://localhost:3306/vyshu</url>
+                <user>root</user>
+                <password>Jyothi@2000</password>
+            </pool>
+        </connection>
+        <statement>
+            <sql><![CDATA[INSERT INTO json_responses (json_response) VALUES (?)]]></sql>
+            <parameter expression="$ctx:jsonResponse" type="VARCHAR"/>
+        </statement>
+    </dbreport>
+</sequence>
