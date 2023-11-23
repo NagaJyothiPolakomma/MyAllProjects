@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: JsontoCsv
+  description: API Definition of JsontoCsv
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/jsontocsv
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

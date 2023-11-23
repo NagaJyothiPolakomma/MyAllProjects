@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/sample" name="sample" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <details xmlns="">
+                        <name xmlns="http://ws.apache.org/ns/synapse">$1</name>
+                    </details>
+                </format>
+                <args>
+                    <arg evaluator="json" expression="$.name"/>
+                </args>
+            </payloadFactory>
+            <log level="custom">
+                <property name="jyothi" value="jyothi"/>
+            </log>
+            <payloadFactory media-type="xml">
+                <format>
+                    <name xmlns="">reddy</name>
+                </format>
+                <args/>
+            </payloadFactory>
+            <log level="custom">
+                <property name="reddy" value="reddy"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

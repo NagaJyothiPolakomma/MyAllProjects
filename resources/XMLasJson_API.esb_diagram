@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_0mv1YGaIEe6NnKVLn-cNoQ" type="Esb" name="XMLasJson_API" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_0nO9kGaIEe6NnKVLn-cNoQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0nO9lWaIEe6NnKVLn-cNoQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_02p5oGaIEe6NnKVLn-cNoQ" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_02qgsGaIEe6NnKVLn-cNoQ" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_021f0GaIEe6NnKVLn-cNoQ" type="3669">
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_021f0WaIEe6NnKVLn-cNoQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_021f0maIEe6NnKVLn-cNoQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_021f02aIEe6NnKVLn-cNoQ"/>
+            <element xmi:type="esb:APIResource" href="XMLasJson_API.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_021f1GaIEe6NnKVLn-cNoQ" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="XMLasJson_API.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_02p5oWaIEe6NnKVLn-cNoQ" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_0nO9kWaIEe6NnKVLn-cNoQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_0nO9kmaIEe6NnKVLn-cNoQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_0nO9k2aIEe6NnKVLn-cNoQ"/>
+    <element xmi:type="esb:EsbServer" href="XMLasJson_API.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0nO9lGaIEe6NnKVLn-cNoQ"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0mv1YWaIEe6NnKVLn-cNoQ"/>
+  <element xmi:type="esb:EsbDiagram" href="XMLasJson_API.esb#/"/>
+</notation:Diagram>

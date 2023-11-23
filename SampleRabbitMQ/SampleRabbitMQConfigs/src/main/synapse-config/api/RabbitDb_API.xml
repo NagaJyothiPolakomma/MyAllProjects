@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/rabbitdb" name="RabbitDb_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" url-mapping="/todb">
+        <inSequence>
+            <propertyGroup>
+                <property expression="json-eval($.empid)" name="empid" scope="default" type="INTEGER"/>
+                <property expression="json-eval($.empname)" name="empname" scope="default" type="STRING"/>
+                <property expression="json-eval($.empadress)" name="empadress" scope="default" type="STRING"/>
+            </propertyGroup>
+            <log level="custom">
+                <property name="enter" value="enter into db"/>
+            </log>
+            <dbreport>
+                <connection>
+                    <pool>
+                        <driver>com.mysql.jdbc.Driver</driver>
+                        <url>jdbc:mysql://localhost:3306/jyothi</url>
+                        <user>root</user>
+                        <password>Jyothi@2000</password>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql><![CDATA[select * from employee;]]></sql>
+                    <parameter expression="get-property('empid')" type="INTEGER"/>
+                    <parameter expression="get-property('empname')" type="VARCHAR"/>
+                    <parameter expression="get-property('empadress')" type="VARCHAR"/>
+                </statement>
+            </dbreport>
+            <log level="custom">
+                <property name="after" value="after db"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+ "empid":$1,&#xd;
+"empname":$2,&#xd;
+"empadress":$3&#xd;
+&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('empid')"/>
+                    <arg evaluator="xml" expression="get-property('empname')"/>
+                    <arg evaluator="xml" expression="get-property('empadress')"/>
+                </args>
+            </payloadFactory>
+            <log level="custom">
+                <property name="after " value="after payload"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

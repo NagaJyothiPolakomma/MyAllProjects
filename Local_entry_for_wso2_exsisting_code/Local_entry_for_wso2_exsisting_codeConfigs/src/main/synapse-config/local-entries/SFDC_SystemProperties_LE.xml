@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="SFDC_SystemProperties_LE" xmlns="http://ws.apache.org/ns/synapse">
+    <BSCS xmlns="">
+        <ServiceCredentials>
+            <Username>jyothi</Username>
+            <Password>Jyothi@2000</Password>
+        </ServiceCredentials>
+    </BSCS>
+</localEntry>

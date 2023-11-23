@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="CsvtoJson_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CsvtoJson_api.xml</file>
+    </artifact>
+    <artifact name="CsvtoJson_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CsvtoJson_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="CsvtoJson_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CsvtoJson_api_metadata.yaml</file>
+    </artifact>
+    <artifact name="CsvtoCsv" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CsvtoCsv.xml</file>
+    </artifact>
+    <artifact name="CsvtoCsv_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CsvtoCsv_swagger.yaml</file>
+    </artifact>
+    <artifact name="CsvtoCsv_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CsvtoCsv_metadata.yaml</file>
+    </artifact>
+    <artifact name="CsvtoXml" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CsvtoXml.xml</file>
+    </artifact>
+    <artifact name="CsvtoXml_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CsvtoXml_swagger.yaml</file>
+    </artifact>
+    <artifact name="CsvtoXml_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CsvtoXml_metadata.yaml</file>
+    </artifact>
+    <artifact name="JsontoCsv" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/JsontoCsv.xml</file>
+    </artifact>
+    <artifact name="JsontoCsv_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/JsontoCsv_swagger.yaml</file>
+    </artifact>
+    <artifact name="JsontoCsv_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/JsontoCsv_metadata.yaml</file>
+    </artifact>
+    <artifact name="XmltoCsv" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/XmltoCsv.xml</file>
+    </artifact>
+    <artifact name="XmltoCsv_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XmltoCsv_swagger.yaml</file>
+    </artifact>
+    <artifact name="XmltoCsv_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XmltoCsv_metadata.yaml</file>
+    </artifact>
+</artifacts>

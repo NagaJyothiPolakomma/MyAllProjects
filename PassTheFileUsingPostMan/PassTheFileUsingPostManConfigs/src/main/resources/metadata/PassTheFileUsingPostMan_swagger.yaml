@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: RabbitResponse_API
+  description: API Definition of PassTheFileUsingPostMan
+  version: 1.0.0
+servers:
+- url: http://responsehost:8290/response
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

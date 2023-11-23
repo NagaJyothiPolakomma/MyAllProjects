@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/customercreate" name="Customer_create_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <header name="Action" scope="default" value="urn:customerCreateRequest"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:add="http://ericsson.com/services/ws_CIL_7/addresswrite" xmlns:cus="http://ericsson.com/services/ws_CIL_7/customercreate" xmlns:cus1="http://ericsson.com/services/ws_CIL_7/customernew" xmlns:cus2="http://ericsson.com/services/ws_CIL_7/customerinfowrite" xmlns:cus3="http://ericsson.com/services/ws_CIL_7/customerwrite" xmlns:mon="http://lhsgroup.com/lhsws/money" xmlns:pay="http://ericsson.com/services/ws_CIL_7/paymentarrangementwrite" xmlns:ses="http://ericsson.com/services/ws_CIL_7/sessionchange" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Header>
+                            <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                                <wsse:UsernameToken wsu:Id="UsernameToken-B8563BEE1C05CD6D5C16951896431121">
+                                    <wsse:Username>ADMX</wsse:Username>
+                                    <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ADMX</wsse:Password>
+                                </wsse:UsernameToken>
+                            </wsse:Security>
+                        </soapenv:Header>
+                        <soapenv:Body>
+                            <cus:customerCreateRequest>
+                                <cus:inputAttributes>
+                                    <cus:customerNew>
+                                        <cus1:paymentResp>$1</cus1:paymentResp>
+                                        <cus1:tbAmount>
+                                            <mon:amount>$2</mon:amount>
+                                            <mon:currency>$3</mon:currency>
+                                        </cus1:tbAmount>
+                                        <cus3:rpcode>$4</cus3:rpcode>
+                                        <cus1:tbMode>$5</cus1:tbMode>
+                                        <cus1:tbPurpose>$6</cus1:tbPurpose>
+                                        <cus1:sioActionType>$7</cus1:sioActionType>
+                                        <cus1:sioThresholdAmt>
+                                            <mon:amount>$8</mon:amount>
+                                            <mon:currency>$9</mon:currency>
+                                        </cus1:sioThresholdAmt>
+                                    </cus:customerNew>
+                                    <cus:paymentArrangementWrite>
+                                        <pay:cspPmntId>$10</pay:cspPmntId>
+                                    </cus:paymentArrangementWrite>
+                                    <cus:addresses>
+                                        <cus:item>
+                                            <cus:addressWrite>
+                                                <add:adrSeq>$11</add:adrSeq>
+                                                <add:adrLname>$12</add:adrLname>
+                                                <add:adrName>$13</add:adrName>
+                                                <add:adrFname>$14</add:adrFname>
+                                                <add:adrStreetno>$15</add:adrStreetno>
+                                            </cus:addressWrite>
+                                        </cus:item>
+                                    </cus:addresses>
+                                    <cus:customerInfoWrite/>
+                                    <cus:customerWrite>
+                                        <cus3:rsCode>$16</cus3:rsCode>
+                                        <cus3:csStatus>$17</cus3:csStatus>
+                                    </cus:customerWrite>
+                                </cus:inputAttributes>
+                                <cus:sessionChangeRequest>
+                                    <ses:values>
+                                        <ses:item>
+                                            <ses:key>BU_ID</ses:key>
+                                            <ses:value>2</ses:value>
+                                        </ses:item>
+                                    </ses:values>
+                                </cus:sessionChangeRequest>
+                            </cus:customerCreateRequest>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="json" expression="$.customerNew.paymentResp"/>
+                    <arg evaluator="json" expression="$.customerNew.tbAmount.amount"/>
+                    <arg evaluator="json" expression="$.customerNew.tbAmount.currency"/>
+                    <arg evaluator="json" expression="$.customerNew.rpcode"/>
+                    <arg evaluator="json" expression="$.customerNew.tbMode"/>
+                    <arg evaluator="json" expression="$.customerNew.tbPurpose"/>
+                    <arg evaluator="json" expression="$.customerNew.sioActionType"/>
+                    <arg evaluator="json" expression="$.customerNew.sioThresholdAmt.amount"/>
+                    <arg evaluator="json" expression="$.customerNew.sioThresholdAmt.currency"/>
+                    <arg evaluator="json" expression="$.paymentArrangementWrite.cspPmntId"/>
+                    <arg evaluator="json" expression="$.addresses.item.addressWrite.adrSeq"/>
+                    <arg evaluator="json" expression="$.addresses.item.addressWrite.adrLname"/>
+                    <arg evaluator="json" expression="$.addresses.item.addressWrite.adrName"/>
+                    <arg evaluator="json" expression="$.addresses.item.addressWrite.adrFname"/>
+                    <arg evaluator="json" expression="$.addresses.item.addressWrite.adrStreetno"/>
+                    <arg evaluator="json" expression="$.customerWrite.rsCode"/>
+                    <arg evaluator="json" expression="$.customerWrite.csStatus"/>
+                </args>
+            </payloadFactory>
+            <call>
+                <endpoint>
+                    <address format="soap11" uri="http://172.16.110.237:4080/wsi/services">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </address>
+                </endpoint>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

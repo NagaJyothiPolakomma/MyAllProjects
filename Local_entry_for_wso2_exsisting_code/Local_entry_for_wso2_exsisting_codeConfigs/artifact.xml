@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="SFDC_SystemProperties_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/SFDC_SystemProperties_LE.xml</file>
+    </artifact>
+    <artifact name="WSo2_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/WSo2_api.xml</file>
+    </artifact>
+    <artifact name="WSo2_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/WSo2_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="WSo2_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/WSo2_api_metadata.yaml</file>
+    </artifact>
+    <artifact name="Get_Entry_Node_Data" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/Get_Entry_Node_Data.xml</file>
+    </artifact>
+    <artifact name="Get_entry_node_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Get_entry_node_api.xml</file>
+    </artifact>
+    <artifact name="Get_entry_node_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Get_entry_node_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="Get_entry_node_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Get_entry_node_api_metadata.yaml</file>
+    </artifact>
+    <artifact name="Get_Local_Entry_Array_Data_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Get_Local_Entry_Array_Data_API.xml</file>
+    </artifact>
+    <artifact name="Get_Local_Entry_Array_Data_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Get_Local_Entry_Array_Data_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Get_Local_Entry_Array_Data_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Get_Local_Entry_Array_Data_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="Array_Loacl_Entry" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/Array_Loacl_Entry.xml</file>
+    </artifact>
+    <artifact name="Overide_Local_Entry" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/Overide_Local_Entry.xml</file>
+    </artifact>
+    <artifact name="Overeide_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Overeide_api.xml</file>
+    </artifact>
+    <artifact name="Overeide_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Overeide_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="Overeide_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Overeide_api_metadata.yaml</file>
+    </artifact>
+</artifacts>

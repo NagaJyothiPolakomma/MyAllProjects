@@ -1,0 +1,11 @@
+---
+key: "Payload_freemaker-api-1.0.0"
+name : "Payload_freemaker-api"
+displayName : "Payload_freemaker-api"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/payload"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

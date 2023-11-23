@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/xmltocsv" name="XmltoCsv" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <CSV.xmlToCsv>
+                <customHeader>Username,Password</customHeader>
+            </CSV.xmlToCsv>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

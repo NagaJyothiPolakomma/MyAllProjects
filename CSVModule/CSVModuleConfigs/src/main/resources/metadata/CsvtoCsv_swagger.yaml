@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: CsvtoCsv
+  description: API Definition of CsvtoCsv
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/csvtocsv
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

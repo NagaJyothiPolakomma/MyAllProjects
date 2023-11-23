@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<localEntry xmlns="http://ws.apache.org/ns/synapse" key="FILE_rename">
+    <file.init>
+        <workingDir>E:\wso2data\CoRelatedFiles</workingDir>
+        <name>FILE_rename</name>
+        <fileLockScheme>Local</fileLockScheme>
+        <connectionType>LOCAL</connectionType>
+    </file.init>
+</localEntry>

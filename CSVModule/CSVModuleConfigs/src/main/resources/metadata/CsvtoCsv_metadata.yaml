@@ -1,0 +1,11 @@
+---
+key: "CsvtoCsv-1.0.0"
+name : "CsvtoCsv"
+displayName : "CsvtoCsv"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/csvtocsv"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

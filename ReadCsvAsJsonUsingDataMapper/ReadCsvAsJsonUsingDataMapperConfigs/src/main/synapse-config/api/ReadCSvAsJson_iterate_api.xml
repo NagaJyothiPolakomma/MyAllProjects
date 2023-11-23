@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/iterate" name="ReadCSvAsJson_iterate_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <file.read configKey="ReadCsvAsJson_Con">
+                <path>E:/jsondata/details.csv</path>
+                <readMode>Complete File</readMode>
+                <startLineNum>0</startLineNum>
+                <endLineNum>0</endLineNum>
+                <lineNum>0</lineNum>
+                <contentType>text/plain</contentType>
+                <includeResultTo>Message Body</includeResultTo>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+            </file.read>
+            <datamapper config="gov:datamapper/ReadCSvAsJson.dmc" inputSchema="gov:datamapper/ReadCSvAsJson_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/ReadCSvAsJson_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/ReadCSvAsJson_xsltStyleSheet.xml"/>
+            <log level="custom">
+                <property expression="$body" name="body"/>
+            </log>
+            <iterate expression="//Jsondata" sequential="true">
+                <target>
+                    <sequence>
+                        <log level="custom">
+                            <property expression="json-eval(Jsondata.Name)" name="name"/>
+                            <property expression="json-eval(Jsondata.Age)" name="age"/>
+                            <property expression="json-eval(Jsondata.Company)" name="company"/>
+                        </log>
+                    </sequence>
+                </target>
+            </iterate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

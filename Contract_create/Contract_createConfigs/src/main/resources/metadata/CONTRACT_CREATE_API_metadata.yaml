@@ -1,0 +1,11 @@
+---
+key: "CONTRACT_CREATE_API-1.0.0"
+name : "CONTRACT_CREATE_API"
+displayName : "CONTRACT_CREATE_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/contarctcreateapi"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

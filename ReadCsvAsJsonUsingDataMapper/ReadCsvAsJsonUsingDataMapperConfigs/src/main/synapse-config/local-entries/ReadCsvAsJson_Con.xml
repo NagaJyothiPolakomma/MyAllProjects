@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<localEntry xmlns="http://ws.apache.org/ns/synapse" key="ReadCsvAsJson_Con">
+    <file.init>
+        <name>ReadCsvAsJson_Con</name>
+        <fileLockScheme>Local</fileLockScheme>
+        <connectionType>LOCAL</connectionType>
+    </file.init>
+</localEntry>

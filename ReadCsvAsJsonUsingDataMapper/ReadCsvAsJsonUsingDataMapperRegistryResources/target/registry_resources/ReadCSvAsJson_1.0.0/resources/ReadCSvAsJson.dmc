@@ -1,0 +1,22 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d = 0;
+outputroot =  {};
+outputroot.Jsondata =  [];
+
+for(i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d in inputroot){
+outputroot.Jsondata[count_i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d] =  {};
+outputroot.Jsondata[count_i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d].Name = inputroot[i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d].Name;
+outputroot.Jsondata[count_i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d].Age = inputroot[i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d].Age;
+outputroot.Jsondata[count_i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d].Company = inputroot[i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d].Company;
+
+count_i_inputroot_45482dc2_8a2d_4e6d_af95_8f3b9911466d++;
+}
+return outputroot;
+};
+
+
+
+
+

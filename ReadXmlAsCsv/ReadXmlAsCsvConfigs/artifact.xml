@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="XmlAsCsv" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/XmlAsCsv.xml</file>
+    </artifact>
+    <artifact name="XmlAsCsv_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XmlAsCsv_swagger.yaml</file>
+    </artifact>
+    <artifact name="XmlAsCsv_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XmlAsCsv_metadata.yaml</file>
+    </artifact>
+    <artifact name="XmlAsCsv_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\XmlAsCsv_con.xml</file>
+    </artifact>
+</artifacts>

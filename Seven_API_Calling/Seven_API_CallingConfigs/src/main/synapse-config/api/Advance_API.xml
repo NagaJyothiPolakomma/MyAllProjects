@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/advance" name="Advance_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log level="custom">
+                <property name="Get the status of Advance=" value="the status is y"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"Api_Name":"Advance_API",&#xd;
+  "Status":"Sucess"&#xd;
+}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

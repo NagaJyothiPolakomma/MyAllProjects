@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: WSo2_api
+  description: API Definition of WSo2_api
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/ws
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

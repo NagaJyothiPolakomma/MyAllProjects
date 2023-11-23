@@ -1,0 +1,11 @@
+---
+key: "ReadCsvAsJson_Iterator_To_Another_API-1.0.0"
+name : "ReadCsvAsJson_Iterator_To_Another_API"
+displayName : "ReadCsvAsJson_Iterator_To_Another_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/readcsvasjsontoanothercall"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

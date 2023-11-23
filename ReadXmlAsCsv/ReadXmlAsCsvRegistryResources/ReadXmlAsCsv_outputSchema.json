@@ -1,0 +1,21 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "CSV",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "array",
+  "items" : [ {
+    "properties" : {
+      "Name" : {
+        "id" : "null/0",
+        "type" : "string"
+      },
+      "Age" : {
+        "id" : "null/0",
+        "type" : "number"
+      }
+    },
+    "id" : "/0",
+    "type" : "object"
+  } ]
+}

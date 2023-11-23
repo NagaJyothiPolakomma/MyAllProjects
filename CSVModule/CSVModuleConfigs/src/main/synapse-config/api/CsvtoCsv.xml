@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/csvtocsv" name="CsvtoCsv" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <CSV.csvToCsv>
+                <headerPresent>Present</headerPresent>
+                <valueSeparator>,</valueSeparator>
+                <skipHeader>false</skipHeader>
+                <columnOrdering>Ascending</columnOrdering>
+            </CSV.csvToCsv>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

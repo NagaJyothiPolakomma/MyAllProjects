@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/jsontocsv" name="JsontoCsv" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <CSV.jsonToCsv>
+                <customHeader>index,name,email,numbe</customHeader>
+            </CSV.jsonToCsv>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

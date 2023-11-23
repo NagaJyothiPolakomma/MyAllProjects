@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ReadCsvAsJson_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ReadCsvAsJson_API.xml</file>
+    </artifact>
+    <artifact name="ReadCsvAsJson_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ReadCsvAsJson_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="ReadCsvAsJson_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ReadCsvAsJson_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="ReadCsvAsJson_Con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\ReadCsvAsJson_Con.xml</file>
+    </artifact>
+    <artifact name="XMLasJson_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XMLasJson_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="XMLasJson_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XMLasJson_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="ReadCSvAsJson_iterate_api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ReadCSvAsJson_iterate_api.xml</file>
+    </artifact>
+    <artifact name="ReadCSvAsJson_iterate_api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ReadCSvAsJson_iterate_api_swagger.yaml</file>
+    </artifact>
+    <artifact name="ReadCSvAsJson_iterate_api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ReadCSvAsJson_iterate_api_metadata.yaml</file>
+    </artifact>
+    <artifact name="ReadCsvAsJson_Iterator_To_Another_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ReadCsvAsJson_Iterator_To_Another_API.xml</file>
+    </artifact>
+    <artifact name="ReadCsvAsJson_Iterator_To_Another_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ReadCsvAsJson_Iterator_To_Another_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="ReadCsvAsJson_Iterator_To_Another_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ReadCsvAsJson_Iterator_To_Another_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="HelloWorld" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/HelloWorld.xml</file>
+    </artifact>
+    <artifact name="HelloWorld_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/HelloWorld_swagger.yaml</file>
+    </artifact>
+    <artifact name="HelloWorld_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/HelloWorld_metadata.yaml</file>
+    </artifact>
+</artifacts>

@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: sample
+  description: API Definition of local
+  version: 1.0.0
+servers:
+- url: http://samplehost:8290/sample
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/Override" name="Overeide_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property name="Overide" scope="default">
+                <source name="Overide_Local_Entry" src="file:E:/Test/Overide_Local_Entry.properties" type="property"/>
+            </property>
+            <log level="custom">
+                <property expression="get-property('Overide')" name="My Data"/>
+            </log>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/rab" name="RabbitCalci_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <header description="SOAPAction" name="SOAPAction" scope="transport" value="http://tempuri.org/Add"/>
+            <property expression="json-eval($.Add.intA)" name="add.intA" scope="default" type="STRING"/>
+            <property expression="json-eval($.Add.intB)" name="add.intB" scope="default" type="STRING"/>
+            <payloadFactory description="transform" media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://tempuri.org/">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <web:Add>
+                                <web:intA>$1</web:intA>
+                                <web:intB>$2</web:intB>
+                            </web:Add>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('add.intA')"/>
+                    <arg evaluator="xml" expression="get-property('add.intB')"/>
+                </args>
+            </payloadFactory>
+            <store messageStore="RabbitMS"/>
+            <log level="full">
+                <property expression="json-eval($.body)" name="result"/>
+            </log>
+            <property description="messageProperty" name="messageType" scope="axis2" type="STRING" value="application/soap+xml"/>
+            <call>
+                <endpoint>
+                    <address uri="http://www.dneonline.com/calculator.asmx">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </address>
+                </endpoint>
+            </call>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

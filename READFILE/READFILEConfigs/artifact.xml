@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="jyothicon" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\jyothicon.xml</file>
+    </artifact>
+    <artifact name="jyothi_vyshu_fileread" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/jyothi_vyshu_fileread.xml</file>
+    </artifact>
+    <artifact name="jyothi_vyshu_fileread_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jyothi_vyshu_fileread_swagger.yaml</file>
+    </artifact>
+    <artifact name="jyothi_vyshu_fileread_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/jyothi_vyshu_fileread_metadata.yaml</file>
+    </artifact>
+</artifacts>

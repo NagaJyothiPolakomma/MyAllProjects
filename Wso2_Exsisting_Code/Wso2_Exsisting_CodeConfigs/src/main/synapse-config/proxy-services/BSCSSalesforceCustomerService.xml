@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="BSCSSalesforceCustomerService" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <property description="SOAP FAULT" name="FORCE_ERROR_ON_SOAP_FAULT" scope="default" type="STRING" value="true"/>
+            <property description="Getting Mobile Number" expression="$trp:msisdn" name="msisdn" scope="default" type="STRING"/>
+            <property description="PRP_GetmessageId" expression="$trp:messageId" name="messageId" scope="default" type="STRING"/>
+            <property description="PRP_SourceInputnumber" expression="concat('MSISDN: ',$ctx:msisdn)" name="sourceInputnumber" scope="default" type="STRING"/>
+            <property description="PRP_proxyName" expression="$ctx:proxy.name" name="proxyName" scope="default" type="STRING"/>
+            <property description="PRP_serviceName" name="serviceName" scope="default" type="STRING" value="BSCS-CustomerServices"/>
+            <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="before Calling BSCS Contract Search Service"/>
+            <property description="PRP_SystemProperties" expression="get-property('SFDC_SystemProperties_LE')" name="SystemProperties" scope="default" type="OM"/>
+            <property description="Username" expression="$ctx:SystemProperties//*[local-name()='BSCS']/*[local-name()='ServiceCredentials']/@Username" name="Username" scope="default" type="STRING"/>
+            <property description="Password" expression="$ctx:SystemProperties//*[local-name()='BSCS']/*[local-name()='ServiceCredentials']/@Password" name="Password" scope="default" type="STRING"/>
+            <property description="MobileMoneyUsername" expression="$ctx:SystemProperties//*[local-name()='MM']/*[local-name()='ServiceCredentials']/@Username" name="MMUsername" scope="default" type="STRING"/>
+            <property description="MobileMoneyPassword" expression="$ctx:SystemProperties//*[local-name()='MM']/*[local-name()='ServiceCredentials']/@Password" name="MMPassword" scope="default" type="STRING"/>
+            <property description="credentials" expression="fn:concat($ctx:MMUsername,':',$ctx:MMPassword)" name="MMCredentials" scope="default" type="STRING"/>
+            <property description="DBQueries" expression="get-property('SFDC_DBQueryDetails_LE')" name="DBQueries" scope="default" type="OM"/>
+            <property description="COUNTRYQUERY" expression="$ctx:DBQueries//*[local-name()='BSCS']/*[local-name()='select_CountryDesc']/text()" name="COUNTRYQUERY" scope="default" type="STRING"/>
+            <property description="BMLQUERY_invoice" expression="$ctx:DBQueries//*[local-name()='select_Invoice']/text()" name="BMLQUERY_invoice" scope="default" type="STRING"/>
+            <property description="Deposit Section" expression="$ctx:DBQueries//*[local-name()='select_Deposit']/text()" name="Deposit" scope="default" type="STRING"/>
+            <property description="Payment" expression="$ctx:DBQueries//*[local-name()='select_Payment']/text()" name="Payment" scope="default" type="STRING"/>
+            <property description="OCC" expression="$ctx:DBQueries//*[local-name()='select_OCC']/text()" name="OCC" scope="default" type="STRING"/>
+            <property description="CustomerGroupName" expression="$ctx:DBQueries//*[local-name()='select_CustomerGroupName']/text()" name="CustomerGroupName" scope="default" type="STRING"/>
+            <property description="BMLQUERY" expression="$ctx:DBQueries//*[local-name()='BSCS']/*[local-name()='select_BMLPaymentHistory']/text()" name="BMLQUERY" scope="default" type="STRING"/>
+            <property description="BSCSQUERY" expression="$ctx:DBQueries//*[local-name()='BSCS']/*[local-name()='select_BSCSPaymentHistory']/text()" name="BSCSQUERY" scope="default" type="STRING"/>
+            <property description="DATASOURCE" expression="$ctx:SystemProperties//*[local-name()='BSCS']/*[local-name()='BSCSRepositoryJNDIName']/text()" name="JNDI_DATASOURCE" scope="default" type="STRING"/>
+            <filter regex="true" source="boolean($ctx:msisdn)">
+                <then>
+                    <filter xpath="fn:string-length(get-property('msisdn')) = 7 and substring(get-property('msisdn'), 1, 1) != '4'">
+                        <then>
+                            <property expression="fn:concat('960',$ctx:msisdn)" name="dirnum" scope="default" type="STRING"/>
+                        </then>
+                        <else>
+                            <property expression="$ctx:msisdn" name="dirnum" scope="default" type="STRING"/>
+                        </else>
+                    </filter>
+                    <log level="custom">
+                        <property name="msisdn" value="BSCSSalesforceCustomerService After added 960 as prefix"/>
+                        <property expression="get-property('dirnum')" name="dirnum"/>
+                    </log>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://www.lhsgroup.com/ws_v3_CBIO_2_1_WAT_1">
+                                <soapenv:Header>
+                                    <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                                        <wsse:UsernameToken>
+                                            <wsse:Username>$2</wsse:Username>
+                                            <wsse:Password>$3</wsse:Password>
+                                        </wsse:UsernameToken>
+                                    </wsse:Security>
+                                </soapenv:Header>
+                                <soapenv:Body>
+                                    <ws:in0>
+                                        <java:input>
+                                            <ws:dirnum>$1</ws:dirnum>
+                                        </java:input>
+                                        <java:sessionChange>
+                                            <ws:values/>
+                                        </java:sessionChange>
+                                    </ws:in0>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:dirnum"/>
+                            <arg evaluator="xml" expression="$ctx:Username"/>
+                            <arg evaluator="xml" expression="$ctx:Password"/>
+                        </args>
+                    </payloadFactory>
+                    <header name="Action" scope="default" value="execute"/>
+                    <call description="Calling Contract Search Service">
+                        <endpoint key="ContractsSearchService_EP"/>
+                    </call>
+                    <filter regex="true" source="boolean($body//*[local-name()='executeReturn']/*[local-name()='contracts']/*[local-name()='item'][*[local-name()='coStatus']/text()='2']/*[local-name()='csId']) or boolean($body//*[local-name()='executeReturn']/*[local-name()='contracts']/*[local-name()='item'][*[local-name()='coStatus']/text()='3']/*[local-name()='csId'])">
+                        <then>
+                            <filter regex="true" source="boolean($body//*[local-name()='executeReturn']/*[local-name()='contracts']/*[local-name()='item'][*[local-name()='coStatus']/text()='2']/*[local-name()='csId'])">
+                                <then>
+                                    <property description="Retrieve CustomerID" expression="$body//*[local-name()='executeReturn']/*[local-name()='contracts']/*[local-name()='item'][*[local-name()='coStatus']/text()='2']/*[local-name()='csId']/text()" name="csId" scope="default" type="STRING"/>
+                                </then>
+                                <else>
+                                    <property description="Retrieve CustomerID" expression="$body//*[local-name()='executeReturn']/*[local-name()='contracts']/*[local-name()='item'][*[local-name()='coStatus']/text()='3']/*[local-name()='csId']/text()" name="csId" scope="default" type="STRING"/>
+                                </else>
+                            </filter>
+                        </then>
+                        <else>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ERRORMessage" name="sErrorMsg" scope="default" type="STRING" value="There is no data associated to this MSISDN"/>
+                            <call>
+                                <endpoint key="makeFault"/>
+                            </call>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="After BSCS Contract Search Service call"/>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://www.lhsgroup.com/ws_v3_CBIO_2_1_WAT_1">
+                                <soapenv:Header>
+                                    <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                                        <wsse:UsernameToken>
+                                            <wsse:Username>$2</wsse:Username>
+                                            <wsse:Password>$3</wsse:Password>
+                                        </wsse:UsernameToken>
+                                    </wsse:Security>
+                                </soapenv:Header>
+                                <soapenv:Body>
+                                    <ws:in0>
+                                        <java:input>
+                                            <ws:addressesRead>
+                                                <ws:csId>$1</ws:csId>
+                                            </ws:addressesRead>
+                                            <ws:customerRead>
+                                                <ws:csId>$1</ws:csId>
+                                            </ws:customerRead>
+                                        </java:input>
+                                        <java:sessionChange>
+                                            <ws:values/>
+                                        </java:sessionChange>
+                                    </ws:in0>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:csId"/>
+                            <arg evaluator="xml" expression="$ctx:Username"/>
+                            <arg evaluator="xml" expression="$ctx:Password"/>
+                        </args>
+                    </payloadFactory>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="Calling BSCS Customer Retrieve Service"/>
+                    <header name="Action" scope="default" value="execute"/>
+                    <call description="Calling Customer Retrieve Service">
+                        <endpoint key="CustomerRetrieveService_EP"/>
+                    </call>
+                    <filter regex="true" source="boolean($body//*[local-name()='executeReturn']/*[local-name()='customerRead']/*[local-name()='csId'])">
+                        <then>
+                            <property description="Customer Retrieve Service Response" expression="$body//*[local-name()='executeReturn']" name="CustomerRetrieveServiceResp" scope="default" type="OM"/>
+                            <property description="Customer Code" expression="$ctx:CustomerRetrieveServiceResp//*[local-name()='customerRead']/*[local-name()='csCode']/text()" name="CustCode" scope="default" type="STRING"/>
+                            <property description="CountryId" expression="$ctx:CustomerRetrieveServiceResp//*[local-name()='addressesRead']/*[local-name()='listOfAllAddresses']/*[local-name()='item'][1]/*[local-name()='countryId']/text()" name="CountryId" scope="default" type="STRING"/>
+                            <property description="Customer Level" expression="$ctx:CustomerRetrieveServiceResp//*[local-name()='customerRead']/*[local-name()='csLevelCode']/text()" name="csLevelCode" scope="default" type="STRING"/>
+                            <property description="prgCode" expression="$ctx:CustomerRetrieveServiceResp//*[local-name()='customerRead']/*[local-name()='prgCode']/text()" name="prgCode" scope="default" type="STRING"/>
+                            <script language="js"><![CDATA[var customerCode =mc.getProperty("CustCode");
+                            var custLevel=mc.getProperty("csLevelCode");
+                            var parCustCode="";
+                            if( (custLevel == "40" && customerCode.startsWith('1.')) || (custLevel == "10") )
+                            {parCustCode="";}
+                            else {parCustCode= customerCode.substr(0, customerCode.lastIndexOf('.'));
+                            }
+                            mc.setProperty("ParentCustCode",parCustCode);]]></script>
+                        </then>
+                        <else>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ErrorMessage" name="sErrorMsg" scope="default" type="STRING" value="There is no customer data associated to this MSISDN"/>
+                            <call>
+                                <endpoint key="makeFault"/>
+                            </call>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="DB Call To Retrieve Customer Group Name"/>
+                    <script language="js"><![CDATA[importPackage(Packages.org.apache.axiom.om);
+                                var sQuery =  mc.getProperty("CustomerGroupName");
+                                var vQUERY =  sQuery.replace("?prgcode",mc.getProperty("prgCode"));
+                                mc.setProperty("QUERY",vQUERY);]]></script>
+                    <class name="com.auras.DatabaseMediator"/>
+                    <property expression="get-property('result')" name="resultSet" scope="default" type="OM"/>
+                    <filter xpath="count($ctx:resultSet//*[local-name()='errorMessage']) > 0">
+                        <then>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ErrorMessage" expression="$ctx:resultSet//*[local-name()='errorMessage']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                            <sequence key="SFDCFault_SEQ"/>
+                            <property description="Customer Group Error Response" expression="$body//*[local-name()='error']" name="CustomerGroupErrorResponse" scope="default" type="OM"/>
+                        </then>
+                        <else>
+                            <property description="CountryGroup" expression="$ctx:resultSet" name="CountryGroup" scope="default" type="OM"/>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="DB Call To Retrieve Country Description"/>
+                    <filter xpath="boolean($ctx:CountryId)">
+                        <then>
+                            <script language="js"><![CDATA[importPackage(Packages.org.apache.axiom.om);
+                                var sQuery =  mc.getProperty("COUNTRYQUERY");
+                                var vQUERY =  sQuery.replace("?countryId",mc.getProperty("CountryId"));
+                                mc.setProperty("QUERY",vQUERY);]]></script>
+                            <class name="com.auras.DatabaseMediator"/>
+                            <property expression="get-property('result')" name="resultSet" scope="default" type="OM"/>
+                            <filter xpath="count($ctx:resultSet//*[local-name()='errorMessage']) > 0">
+                                <then>
+                                    <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                                    <property description="ErrorMessage" expression="$ctx:resultSet//*[local-name()='errorMessage']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                                    <sequence key="SFDCFault_SEQ"/>
+                                    <property description="Country Description Error Response" expression="$body//*[local-name()='error']" name="CountryDescriptionErrorResponse" scope="default" type="OM"/>
+                                </then>
+                                <else>
+                                    <property description="Country Description" expression="$ctx:resultSet" name="CountryDesc" scope="default" type="OM"/>
+                                </else>
+                            </filter>
+                        </then>
+                        <else/>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="DB Call To Retrieve BML Payment History"/>
+                    <script language="js"><![CDATA[importPackage(Packages.org.apache.axiom.om);
+                                var sQuery =  mc.getProperty("BMLQUERY");
+                                var vQUERY =  sQuery.replace("?custCode",mc.getProperty("CustCode"));
+                                mc.setProperty("QUERY",vQUERY);]]></script>
+                    <class name="com.auras.DatabaseMediator"/>
+                    <property expression="get-property('result')" name="resultSet" scope="default" type="OM"/>
+                    <filter xpath="count($ctx:resultSet//*[local-name()='errorMessage']) > 0">
+                        <then>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ErrorMessage" expression="$ctx:resultSet//*[local-name()='errorMessage']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                            <sequence key="SFDCFault_SEQ"/>
+                            <property description="BMLPaymentHistory Error Response" expression="$body//*[local-name()='error']" name="BMLPaymentHistoryErrorResponse" scope="default" type="OM"/>
+                        </then>
+                        <else>
+                            <property description="BMLPaymentHistory" expression="$ctx:resultSet" name="BMLPaymentHistory" scope="default" type="OM"/>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="DB Call To Retrieve BML Payment History Invoice"/>
+                    <script language="js"><![CDATA[importPackage(Packages.org.apache.axiom.om);
+                                var sQuery =  mc.getProperty("BMLQUERY_invoice");
+                                var vQUERY =  sQuery.replace("?custCode",mc.getProperty("CustCode"));
+                                mc.setProperty("QUERY",vQUERY);]]></script>
+                    <class name="com.auras.DatabaseMediator"/>
+                    <property expression="get-property('result')" name="resultSet" scope="default" type="OM"/>
+                    <filter xpath="count($ctx:resultSet//*[local-name()='errorMessage']) > 0">
+                        <then>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ErrorMessage" expression="$ctx:resultSet//*[local-name()='errorMessage']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                            <sequence key="SFDCFault_SEQ"/>
+                            <property description="BMLPaymentHistory Error Response Invoice" expression="$body//*[local-name()='error']" name="BMLPaymentHistoryErrorResponseInvoice" scope="default" type="OM"/>
+                        </then>
+                        <else>
+                            <property description="BMLPaymentHistory_Invoice" expression="$ctx:resultSet" name="BMLPaymentHistory_Invoice" scope="default" type="OM"/>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="DB Call To Retrieve Deposit Section"/>
+                    <script language="js"><![CDATA[importPackage(Packages.org.apache.axiom.om);
+                                var sQuery =  mc.getProperty("Deposit");
+                                var vQUERY =  sQuery.replace("?custCode",mc.getProperty("CustCode"));
+                                mc.setProperty("QUERY",vQUERY);]]></script>
+                    <class name="com.auras.DatabaseMediator"/>
+                    <property expression="get-property('result')" name="resultSet" scope="default" type="OM"/>
+                    <log level="custom">
+                        <property expression="get-property('result')" name="DepositDepositDeposit"/>
+                    </log>
+                    <filter xpath="count($ctx:resultSet//*[local-name()='errorMessage']) > 0">
+                        <then>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ErrorMessage" expression="$ctx:resultSet//*[local-name()='errorMessage']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                            <sequence key="SFDCFault_SEQ"/>
+                            <property description="DepositErrorResponse" expression="$body//*[local-name()='error']" name="DepositErrorResponse" scope="default" type="OM"/>
+                        </then>
+                        <else>
+                            <property description="Deposit Section" expression="$ctx:resultSet" name="Deposit" scope="default" type="OM"/>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="DB Call To Retrieve Payment Section"/>
+                    <script language="js"><![CDATA[importPackage(Packages.org.apache.axiom.om);
+                                var sQuery =  mc.getProperty("Payment");
+                                var vQUERY =  sQuery.replace("?custCode",mc.getProperty("CustCode"));
+                                mc.setProperty("QUERY",vQUERY);]]></script>
+                    <class name="com.auras.DatabaseMediator"/>
+                    <property expression="get-property('result')" name="resultSet" scope="default" type="OM"/>
+                    <log level="custom">
+                        <property expression="get-property('result')" name="PAyment section"/>
+                    </log>
+                    <filter xpath="count($ctx:resultSet//*[local-name()='errorMessage']) > 0">
+                        <then>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ErrorMessage" expression="$ctx:resultSet//*[local-name()='errorMessage']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                            <sequence key="SFDCFault_SEQ"/>
+                            <property description="BSCS Payment-Section Error Response" expression="$body//*[local-name()='error']" name="BSCSPaymentSectionErrorResponse" scope="default" type="OM"/>
+                        </then>
+                        <else>
+                            <property description="Payment Section" expression="$ctx:resultSet" name="BSCSPaymentSection" scope="default" type="OM"/>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="DB Call To Retrieve OCC Section"/>
+                    <script language="js"><![CDATA[importPackage(Packages.org.apache.axiom.om);
+                                var sQuery =  mc.getProperty("OCC");
+                                var vQUERY =  sQuery.replace("?custCode",mc.getProperty("CustCode"));
+                                mc.setProperty("QUERY",vQUERY);]]></script>
+                    <class name="com.auras.DatabaseMediator"/>
+                    <property expression="get-property('result')" name="resultSet" scope="default" type="OM"/>
+                    <log level="custom">
+                        <property expression="get-property('result')" name="OCCCCCCCCC"/>
+                    </log>
+                    <filter xpath="count($ctx:resultSet//*[local-name()='errorMessage']) > 0">
+                        <then>
+                            <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                            <property description="ErrorMessage" expression="$ctx:resultSet//*[local-name()='errorMessage']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                            <sequence key="SFDCFault_SEQ"/>
+                            <property description="BSCSOCC Error Response" expression="$body//*[local-name()='error']" name="BSCSOCCSectionErrorResponse" scope="default" type="OM"/>
+                        </then>
+                        <else>
+                            <property description="OCC Section" expression="$ctx:resultSet" name="OCC" scope="default" type="OM"/>
+                        </else>
+                    </filter>
+                    <property description="PRP_stageName" name="stageName" scope="default" type="STRING" value="Calling Mobile Money Service"/>
+                    <property description="SOAP FAULT" name="FORCE_ERROR_ON_SOAP_FAULT" scope="default" type="STRING" value="false"/>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://mobiliser.sybase365.com/custom/project/services/contract/v1_0">
+                                <soapenv:Header/>
+                                <soapenv:Body>
+                                    <v1:BalanceInquiryRequest origin="soap" repeat="false" traceNo="100">
+                                        <mobileNumber xmlns="">$1</mobileNumber>
+                                    </v1:BalanceInquiryRequest>
+                                </soapenv:Body>
+                            </soapenv:Envelope>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:dirnum"/>
+                        </args>
+                    </payloadFactory>
+                    <enrich>
+                        <source clone="true" property="messageId" type="property"/>
+                        <target xpath="$body//*[local-name()='BalanceInquiryRequest'][@origin='soap']/@traceNo"/>
+                    </enrich>
+                    <property description="base64 encoded format" expression="base64Encode($ctx:MMCredentials)" name="base64" scope="default" type="STRING"/>
+                    <property name="ContentType" scope="transport" type="STRING" value="text/xml"/>
+                    <header expression="fn:concat('Basic ',$ctx:base64)" name="Authorization" scope="transport"/>
+                    <header name="Action" scope="default" value="BalanceInquiry"/>
+                    <filter regex="false" source="boolean($body//*[local-name()='Fault'])">
+                        <then>
+                            <switch source="$body//*[local-name()='BalanceInquiryResponse']/*[local-name()='Status']/@code">
+                                <case regex="0">
+                                    <property description="Mobile Money Service Response" expression="//*[local-name()='BalanceInquiryResponse']" name="MobileMoneyResponse" scope="default" type="OM"/>
+                                </case>
+                                <case regex="10626">
+                                    <property description="Mobile Money Service Response" expression="//*[local-name()='BalanceInquiryResponse']" name="MobileMoneyResponse" scope="default" type="OM"/>
+                                </case>
+                                <default>
+                                    <property description="ERRORCODE" expression="$body//*[local-name()='BalanceInquiryResponse']/*[local-name()='Status']/@code" name="sErrorCode" scope="default" type="STRING"/>
+                                    <property description="ERRORMessage" expression="$body//*[local-name()='BalanceInquiryResponse']/*[local-name()='Status']/text()" name="sErrorMsg" scope="default" type="STRING"/>
+                                    <sequence key="SFDCFault_SEQ"/>
+                                    <property description="Mobile Money Service Error Response" expression="//*[local-name()='error']" name="MobileMoneyErrorResponse" scope="default" type="OM"/>
+                                </default>
+                            </switch>
+                        </then>
+                        <else>
+                            <sequence key="SFDCFault_SEQ"/>
+                            <property description="Mobile Money Service Error Response" expression="//*[local-name()='error']" name="MobileMoneyErrorResponse" scope="default" type="OM"/>
+                        </else>
+                    </filter>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <Response xmlns="">
+                                <MobileMoneyResponse>$1</MobileMoneyResponse>
+                                <BMLPaymentHistory>$2</BMLPaymentHistory>
+                                <BMLPaymentHistory_Invoice>$3</BMLPaymentHistory_Invoice>
+                                <BSCSPaymentSection>$4</BSCSPaymentSection>
+                                <SFDCCustomerRetrieveServiceResp>$5</SFDCCustomerRetrieveServiceResp>
+                                <MobileNumber>$6</MobileNumber>
+                                <ParentCustomerCode>$7</ParentCustomerCode>
+                                <CountryDesc>$8</CountryDesc>
+                                <CountryGroup>$9</CountryGroup>
+                                <Deposit>$10</Deposit>
+                                <OCC>$11</OCC>
+                                <errors>
+                                    $12
+                                    $13
+                                    $14
+                                    $15
+                                                                    $16
+                                                                    $17
+                                                                                $18
+                                                                                $19
+                                </errors>
+                            </Response>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:MobileMoneyResponse"/>
+                            <arg evaluator="xml" expression="$ctx:BMLPaymentHistory"/>
+                            <arg evaluator="xml" expression="$ctx:BMLPaymentHistory_Invoice"/>
+                            <arg evaluator="xml" expression="$ctx:BSCSPaymentSection"/>
+                            <arg evaluator="xml" expression="$ctx:CustomerRetrieveServiceResp"/>
+                            <arg evaluator="xml" expression="$ctx:dirnum"/>
+                            <arg evaluator="xml" expression="$ctx:ParentCustCode"/>
+                            <arg evaluator="xml" expression="$ctx:CountryDesc"/>
+                            <arg evaluator="xml" expression="$ctx:CountryGroup"/>
+                            <arg evaluator="xml" expression="$ctx:Deposit"/>
+                            <arg evaluator="xml" expression="$ctx:OCC"/>
+                            <arg evaluator="xml" expression="$ctx:MobileMoneyErrorResponse"/>
+                            <arg evaluator="xml" expression="$ctx:BMLPaymentHistoryErrorResponse"/>
+                            <arg evaluator="xml" expression="$ctx:BSCSPaymentSectionErrorResponse"/>
+                            <arg evaluator="xml" expression="$ctx:BSCSOCCSectionErrorResponse"/>
+                            <arg evaluator="xml" expression="$ctx:CountryDescriptionErrorResponse"/>
+                            <arg evaluator="xml" expression="$ctx:BMLPaymentHistoryErrorResponseInvoice"/>
+                            <arg evaluator="xml" expression="$ctx:CustomerGroupErrorResponse"/>
+                            <arg evaluator="xml" expression="$ctx:DepositErrorResponse"/>
+                        </args>
+                    </payloadFactory>
+                    <property description="SOAP FAULT" name="FORCE_ERROR_ON_SOAP_FAULT" scope="default" type="STRING" value="true"/>
+                    <property description="PRP_Data" expression="$body/*" name="CustomerResMessage" scope="default" type="OM"/>
+                    <property description="PRP_Type" name="Type" scope="default" type="STRING" value="Log"/>
+                    <property description="PRP_serviceName" name="Service" scope="default" type="STRING" value="BSCS-CustomerService"/>
+                    <property description="PRP_LogLevel" name="LogLevel" scope="default" type="STRING" value="2"/>
+                    <property description="PRP_TransactionStatusId" name="TransactionStatusId" scope="default" type="STRING" value="3"/>
+                    <property description="PRP_Data" expression="$ctx:CustomerResMessage" name="ebRequestMessage" scope="default" type="STRING"/>
+                    <property description="Notes" name="notes" scope="default" type="STRING" value="Consolidated Response from BSCS Systems"/>
+                    <sequence key="InsertTransactionAuditDetails_SEQ"/>
+                    <enrich description="ebMessage Payload">
+                        <source clone="true" property="CustomerResMessage" type="property"/>
+                        <target type="body"/>
+                    </enrich>
+                </then>
+                <else>
+                    <property description="ERRORCODE" name="sErrorCode" scope="default" type="STRING" value="1000"/>
+                    <property description="ERRORMessage" name="sErrorMsg" scope="default" type="STRING" value="MSISDN is mandatory"/>
+                    <call>
+                        <endpoint key="makeFault"/>
+                    </call>
+                </else>
+            </filter>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="SFDCFault_SEQ"/>
+            <respond description="Fault Response"/>
+        </faultSequence>
+    </target>
+    <parameter name="disableREST">true</parameter>
+    <parameter name="disableSOAP12">true</parameter>
+</proxy>

@@ -1,0 +1,11 @@
+---
+key: "PassTheFileUsingPostMan-1.0.0"
+name : "PassTheFileUsingPostMan"
+displayName : "PassTheFileUsingPostMan"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/postman"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

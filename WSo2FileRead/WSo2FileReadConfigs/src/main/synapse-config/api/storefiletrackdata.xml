@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/storefiletrackdata" name="storefiletrackdata" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <file.listFiles configKey="List_files">
+                <directoryPath>\in</directoryPath>
+                <matchingPattern>.*\.</matchingPattern>
+                <recursive>true</recursive>
+                <responseFormat>Hierarchical</responseFormat>
+                <sortingAttribute>Name</sortingAttribute>
+                <sortingOrder>Ascending</sortingOrder>
+            </file.listFiles>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

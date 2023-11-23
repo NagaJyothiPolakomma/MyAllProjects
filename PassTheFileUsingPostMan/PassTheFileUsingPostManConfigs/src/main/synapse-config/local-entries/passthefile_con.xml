@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<localEntry xmlns="http://ws.apache.org/ns/synapse" key="passthefile_con">
+    <file.init>
+        <strictHostKeyChecking>false</strictHostKeyChecking>
+        <connectionType>SFTP</connectionType>
+        <password>Bscs%402020</password>
+        <host>172.16.110.237</host>
+        <fileLockScheme>Local</fileLockScheme>
+        <workingDir>home/bscsr17/wso2Jyothi</workingDir>
+        <sftpConnectionTimeout>100000</sftpConnectionTimeout>
+        <setAvoidPermission>false</setAvoidPermission>
+        <userDirIsRoot>false</userDirIsRoot>
+        <port>22</port>
+        <name>passthefile_con</name>
+        <sftpSessionTimeout>150000</sftpSessionTimeout>
+        <username>bscsr17</username>
+    </file.init>
+</localEntry>

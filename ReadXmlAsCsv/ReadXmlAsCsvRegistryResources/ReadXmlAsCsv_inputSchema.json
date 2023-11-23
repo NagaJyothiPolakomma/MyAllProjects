@@ -1,0 +1,27 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "Employees",
+  "type" : "object",
+  "properties" : {
+    "Employee" : {
+      "id" : "http://wso2jsonschema.org/Employee",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/Employee/0",
+        "type" : "object",
+        "properties" : {
+          "Name" : {
+            "id" : "http://wso2jsonschema.org/Employee/0/Name",
+            "type" : "string"
+          },
+          "Age" : {
+            "id" : "http://wso2jsonschema.org/Employee/0/Age",
+            "type" : "number"
+          }
+        }
+      } ]
+    }
+  }
+}

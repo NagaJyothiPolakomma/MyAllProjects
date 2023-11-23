@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/develop" name="Develop_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property expression="json-eval($)" name="payload" scope="default" type="STRING"/>
+            <class name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"Response":&#xd;
+{&#xd;
+$1&#xd;
+}&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:response"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

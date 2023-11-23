@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_O03ncGzREe6JToxuVER-Gg" type="Esb" name="ReadCsvAsJson_API" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_O1bBEGzREe6JToxuVER-Gg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_O1boIGzREe6JToxuVER-Gg" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_UKzKUGzREe6JToxuVER-Gg" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_UKzxYGzREe6JToxuVER-Gg" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_UK-JcGzREe6JToxuVER-Gg" type="3669">
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_UK-JcWzREe6JToxuVER-Gg"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_UK-JcmzREe6JToxuVER-Gg" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_UK-Jc2zREe6JToxuVER-Gg"/>
+            <element xmi:type="esb:APIResource" href="ReadCsvAsJson_API.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UK-JdGzREe6JToxuVER-Gg" x="100" y="96"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="ReadCsvAsJson_API.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UKzKUWzREe6JToxuVER-Gg" x="3075" y="94"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_O1bBEWzREe6JToxuVER-Gg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_O1bBEmzREe6JToxuVER-Gg" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_O1bBE2zREe6JToxuVER-Gg"/>
+    <element xmi:type="esb:EsbServer" href="ReadCsvAsJson_API.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O1bBFGzREe6JToxuVER-Gg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_O03ncWzREe6JToxuVER-Gg"/>
+  <element xmi:type="esb:EsbDiagram" href="ReadCsvAsJson_API.esb#/"/>
+</notation:Diagram>

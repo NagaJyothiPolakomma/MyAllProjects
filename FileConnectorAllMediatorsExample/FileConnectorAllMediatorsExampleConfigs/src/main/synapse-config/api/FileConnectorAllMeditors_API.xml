@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/AllMediators" name="FileConnectorAllMeditors_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <file.checkExist configKey="chechexist_con">
+                <path>\CO.txt</path>
+                <includeResultTo>Message Property</includeResultTo>
+                <resultPropertyName>EXSISTENCE_CHCK</resultPropertyName>
+            </file.checkExist>
+            <log level="custom">
+                <property expression="get-property('EXSISTENCE_CHCK')" name="FileExists"/>
+            </log>
+            <file.read configKey="Filered_con">
+                <path>\details.csv</path>
+                <filePattern>.*\.csv</filePattern>
+                <readMode>Complete File</readMode>
+                <startLineNum>0</startLineNum>
+                <endLineNum>0</endLineNum>
+                <lineNum>0</lineNum>
+                <includeResultTo>Message Body</includeResultTo>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+            </file.read>
+            <log level="full"/>
+            <log level="custom">
+                <property expression="$body" name="body"/>
+            </log>
+            <file.listFiles configKey="listfiles_con">
+                <directoryPath>/</directoryPath>
+                <matchingPattern>.*\.*</matchingPattern>
+                <recursive>false</recursive>
+                <responseFormat>Hierarchical</responseFormat>
+                <sortingAttribute>Name</sortingAttribute>
+                <sortingOrder>Ascending</sortingOrder>
+            </file.listFiles>
+            <log level="full"/>
+            <file.write configKey="Filewrite_con">
+                <filePath>/</filePath>
+                <contentOrExpression>&lt;name&gt;jyothi reddy&lt;/name&gt;&#xd;
+&lt;no&gt;9392659114&lt;/no&gt;&#xd;
+</contentOrExpression>
+                <mimeType>text/xml</mimeType>
+                <compress>false</compress>
+                <writeMode>Create New</writeMode>
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>false</appendNewLine>
+                <enableLock>false</enableLock>
+                <includeResultTo>Message Property</includeResultTo>
+                <resultPropertyName>filewrite</resultPropertyName>
+                <updateLastModified>true</updateLastModified>
+            </file.write>
+            <log level="custom">
+                <property expression="get-property('filewrite')" name="filewrite"/>
+            </log>
+            <file.rename configKey="FILE_rename">
+                <path>\details.csv</path>
+                <renameTo>E:\Test\Files\Team.csv</renameTo>
+                <overwrite>false</overwrite>
+            </file.rename>
+            <log level="full"/>
+            <file.delete configKey="FILE_delete_con">
+                <path>/</path>
+                <matchingPattern>.*\.*</matchingPattern>
+            </file.delete>
+            <log level="custom">
+                <property name="deleted " value="deleted successfully"/>
+            </log>
+            <file.splitFile configKey="FILE_Split_file_con">
+                <sourceFilePath>{$ctx:body}</sourceFilePath>
+                <targetDirectory>E:\Test\connected\created</targetDirectory>
+                <splitMode>Line Count</splitMode>
+                <chunkSize>10</chunkSize>
+                <lineCount>3</lineCount>
+            </file.splitFile>
+            <log level="custom">
+                <property name="split" value="splited successfully"/>
+            </log>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

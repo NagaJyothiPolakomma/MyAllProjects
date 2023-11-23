@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_i5Dx0GZrEe6FpalA8cm89Q" type="Esb" name="Csv_get_From_Postman" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_i6LzMGZrEe6FpalA8cm89Q" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_i6LzNWZrEe6FpalA8cm89Q" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_jme4gGZrEe6FpalA8cm89Q" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_jme4gmZrEe6FpalA8cm89Q" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_jmrFwGZrEe6FpalA8cm89Q" type="3669">
+            <children xmi:type="notation:Node" xmi:id="_jmv-QGZrEe6FpalA8cm89Q" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_jmv-QWZrEe6FpalA8cm89Q"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_jmv-QmZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_jmv-Q2ZrEe6FpalA8cm89Q"/>
+              <element xmi:type="esb:APIResourceInputConnector" href="Csv_get_From_Postman.esb#//@server/@children.0/@resources.0/@inputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jmv-RGZrEe6FpalA8cm89Q" x="86" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_jmv-RWZrEe6FpalA8cm89Q" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_jmv-RmZrEe6FpalA8cm89Q"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_jmv-R2ZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_jmv-SGZrEe6FpalA8cm89Q"/>
+              <element xmi:type="esb:APIResourceOutputConnector" href="Csv_get_From_Postman.esb#//@server/@children.0/@resources.0/@outputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jmv-SWZrEe6FpalA8cm89Q" x="86" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_jmwlUGZrEe6FpalA8cm89Q" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_jmwlUWZrEe6FpalA8cm89Q"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_jmwlUmZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_jmwlU2ZrEe6FpalA8cm89Q"/>
+              <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="Csv_get_From_Postman.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jmwlVGZrEe6FpalA8cm89Q" x="110" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_jmwlVWZrEe6FpalA8cm89Q" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_jmwlVmZrEe6FpalA8cm89Q"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_jmwlV2ZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_jmwlWGZrEe6FpalA8cm89Q"/>
+              <element xmi:type="esb:APIResourceFaultInputConnector" href="Csv_get_From_Postman.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jmwlWWZrEe6FpalA8cm89Q" x="86" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_jmxMYGZrEe6FpalA8cm89Q" type="3673">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_jmxMYWZrEe6FpalA8cm89Q"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_jmxMYmZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_jmxMY2ZrEe6FpalA8cm89Q"/>
+              <element xmi:type="esb:ProxyServiceContainer" href="Csv_get_From_Postman.esb#//@server/@children.0/@resources.0/@container"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jmxMZGZrEe6FpalA8cm89Q"/>
+            </children>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_jmrFwWZrEe6FpalA8cm89Q"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_jmrFwmZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_jmrFw2ZrEe6FpalA8cm89Q"/>
+            <element xmi:type="esb:APIResource" href="Csv_get_From_Postman.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jmrFxGZrEe6FpalA8cm89Q" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="Csv_get_From_Postman.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jme4gWZrEe6FpalA8cm89Q" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_i6LzMWZrEe6FpalA8cm89Q"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_i6LzMmZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_i6LzM2ZrEe6FpalA8cm89Q"/>
+    <element xmi:type="esb:EsbServer" href="Csv_get_From_Postman.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6LzNGZrEe6FpalA8cm89Q"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_i5Dx0WZrEe6FpalA8cm89Q"/>
+  <element xmi:type="esb:EsbDiagram" href="Csv_get_From_Postman.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_jqE_EGZrEe6FpalA8cm89Q" type="4001" source="_jmv-RWZrEe6FpalA8cm89Q" target="_jpcs8GZrEe6FpalA8cm89Q" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_jqE_EWZrEe6FpalA8cm89Q" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="Csv_get_From_Postman.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jqE_EmZrEe6FpalA8cm89Q" points="[6, 5, -5, 0]$[5, 0, -6, -5]"/>
+  </edges>
+</notation:Diagram>

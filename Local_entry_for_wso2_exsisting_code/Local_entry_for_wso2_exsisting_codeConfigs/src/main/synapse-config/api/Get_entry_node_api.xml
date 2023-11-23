@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/getentry" name="Get_entry_node_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property expression="get-property('Get_Entry_Node_Data')" name="NodeData" scope="default" type="OM"/>
+            <log level="custom">
+                <property expression="$ctx:NodeData" name="NodeData"/>
+            </log>
+            <property expression="$ctx:NodeData//*[local-name()='Information']/@id" name="id" scope="default" type="STRING"/>
+            <property expression="$ctx:NodeData//*[local-name()='Information'][@name='jyo']/@fullname" name="name" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="$ctx:id" name="id"/>
+                <property expression="$ctx:name" name="name"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

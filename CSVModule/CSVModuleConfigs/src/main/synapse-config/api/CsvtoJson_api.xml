@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/csvtojson" name="CsvtoJson_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <CSV.csvToJson>
+                <headerPresent>Present</headerPresent>
+                <valueSeparator>,</valueSeparator>
+                <skipHeader>false</skipHeader>
+                <csvEmptyValues>Null</csvEmptyValues>
+            </CSV.csvToJson>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

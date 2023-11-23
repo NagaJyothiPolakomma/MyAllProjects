@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="calci" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/calci.xml</file>
+    </artifact>
+    <artifact name="RabbitCalci_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/RabbitCalci_API.xml</file>
+    </artifact>
+    <artifact name="RabbitMS" groupId="com.example.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/RabbitMS.xml</file>
+    </artifact>
+    <artifact name="RabbitMQSEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RabbitMQSEQ.xml</file>
+    </artifact>
+    <artifact name="RabbitMP" groupId="com.example.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/RabbitMP.xml</file>
+    </artifact>
+    <artifact name="RabbitDb_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/RabbitDb_API.xml</file>
+    </artifact>
+    <artifact name="RabbitResponseMS" groupId="com.example.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/RabbitResponseMS.xml</file>
+    </artifact>
+    <artifact name="RabbitResponseSeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RabbitResponseSeq.xml</file>
+    </artifact>
+    <artifact name="RabbitResponseMP" groupId="com.example.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/RabbitResponseMP.xml</file>
+    </artifact>
+    <artifact name="RabbitResponse_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/RabbitResponse_API.xml</file>
+    </artifact>
+    <artifact name="Response_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/Response_EP.xml</file>
+    </artifact>
+    <artifact name="RequestConsume" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/RequestConsume.xml</file>
+    </artifact>
+</artifacts>

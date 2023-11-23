@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/jyothivyshu" name="jyothi_vyshu_fileread.xml" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <file.read configKey="jyothicon">
+                <path>\details.csv</path>
+                <filePattern>.*\.csv</filePattern>
+                <readMode>Complete File</readMode>
+                <startLineNum>0</startLineNum>
+                <endLineNum>0</endLineNum>
+                <lineNum>0</lineNum>
+                <includeResultTo>Message Body</includeResultTo>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+            </file.read>
+            <property expression="$trp:FILE_NAME" name="filename" scope="default" type="STRING"/>
+            <log>
+                <property expression="get-property('filename')" name="OriginalFileName"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="FileConnectorAllMeditors_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/FileConnectorAllMeditors_API.xml</file>
+    </artifact>
+    <artifact name="FileConnectorAllMeditors_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/FileConnectorAllMeditors_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="FileConnectorAllMeditors_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/FileConnectorAllMeditors_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="chechexist_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\chechexist_con.xml</file>
+    </artifact>
+    <artifact name="Filered_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\Filered_con.xml</file>
+    </artifact>
+    <artifact name="listfiles_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\listfiles_con.xml</file>
+    </artifact>
+    <artifact name="Filewrite_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\Filewrite_con.xml</file>
+    </artifact>
+    <artifact name="FILE_rename" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\FILE_rename.xml</file>
+    </artifact>
+    <artifact name="FILE_delete_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\FILE_delete_con.xml</file>
+    </artifact>
+    <artifact name="FILE_Split_file_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\FILE_Split_file_con.xml</file>
+    </artifact>
+</artifacts>

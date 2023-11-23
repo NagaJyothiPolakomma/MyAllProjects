@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/Arraydata" name="Get_Local_Entry_Array_Data_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property expression="get-property('Array_Loacl_Entry')" name="array" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="$ctx:array" name="array_data"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

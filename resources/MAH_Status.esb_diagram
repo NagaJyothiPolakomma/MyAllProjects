@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_N9MBsGdkEe6xsppFrGa7ww" type="Esb" name="MAH_Status" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_N9yeoGdkEe6xsppFrGa7ww" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_N9zFsGdkEe6xsppFrGa7ww" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_ORe2sGdkEe6xsppFrGa7ww" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_ORe2smdkEe6xsppFrGa7ww" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_ORmLcGdkEe6xsppFrGa7ww" type="3669">
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_ORmLcWdkEe6xsppFrGa7ww"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_ORmLcmdkEe6xsppFrGa7ww" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_ORmLc2dkEe6xsppFrGa7ww"/>
+            <element xmi:type="esb:APIResource" href="MAH_Status.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ORmLdGdkEe6xsppFrGa7ww" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="MAH_Status.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ORe2sWdkEe6xsppFrGa7ww" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_N9yeoWdkEe6xsppFrGa7ww"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_N9yeomdkEe6xsppFrGa7ww" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_N9yeo2dkEe6xsppFrGa7ww"/>
+    <element xmi:type="esb:EsbServer" href="MAH_Status.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N9yepGdkEe6xsppFrGa7ww"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_N9MBsWdkEe6xsppFrGa7ww"/>
+  <element xmi:type="esb:EsbDiagram" href="MAH_Status.esb#/"/>
+</notation:Diagram>

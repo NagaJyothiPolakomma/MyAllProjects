@@ -1,0 +1,11 @@
+---
+key: "Get_Local_Entry_Array_Data_API-1.0.0"
+name : "Get_Local_Entry_Array_Data_API"
+displayName : "Get_Local_Entry_Array_Data_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/Arraydata"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esb:EsbDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb">
+  <server type="SEQUENCE">
+    <children xsi:type="esb:Sequences" name="Sequence">
+      <outputConnector>
+        <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.0/@inputConnector"/>
+      </outputConnector>
+      <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.6/@outputConnector/@outgoingLink"/>
+      <mediatorFlow>
+        <children xsi:type="esb:LogMediator" logLevel="FULL" logSeparator=", ">
+          <inputConnector incomingLinks="//@server/@children.0/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.1/@inputConnector"/>
+          </outputConnector>
+        </children>
+        <children xsi:type="esb:PropertyMediator" valueType="EXPRESSION" newPropertyName="filename">
+          <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.2/@inputConnector"/>
+          </outputConnector>
+          <valueExpression propertyValue="$trp:FILE_NAME" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078" supportJsonPaths="true"/>
+        </children>
+        <children xsi:type="esb:ScriptMediator" scriptType="INLINE" scriptBody="var uuid=java.util.UUID.randomUUID().toString();&#xA;mc.setProperty(&quot;uuid&quot;,uuid);">
+          <scriptDynamicKey prettyName="" propertyName="dynamic key" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+          <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.3/@inputConnector"/>
+          </outputConnector>
+          <scriptStaticKey prettyName="Script Key" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+        </children>
+        <children xsi:type="esb:LogMediator" logLevel="CUSTOM" logSeparator=", ">
+          <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.4/@inputConnector"/>
+          </outputConnector>
+          <properties propertyName="filename" propertyValueType="EXPRESSION" propertyValue="">
+            <propertyExpression propertyValue="$ctx:filename" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+          </properties>
+        </children>
+        <children xsi:type="esb:LogMediator" logSeparator=", ">
+          <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.3/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.5/@inputConnector"/>
+          </outputConnector>
+          <properties propertyName="enter into db" propertyValue="enter into db">
+            <propertyExpression prettyName="property expression" propertyName="expression" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+          </properties>
+        </children>
+        <children xsi:type="esb:DBReportMediator" connectionDbType="MYSQL" connectionDbDriver="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/vyshu" connectionUsername="root" connectionPassword="Jyothi@2000">
+          <sqlStatements queryString="insert into filetrack(uuid,filename,sysdate) values(?,?,NOW());">
+            <parameters dataType="VARCHAR" valueLiteral="default">
+              <valueExpression propertyValue="$trp:uuid" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+            </parameters>
+            <parameters dataType="VARCHAR" valueLiteral="default">
+              <valueExpression propertyValue="$ctx:filename" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+            </parameters>
+          </sqlStatements>
+          <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.4/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.6/@inputConnector"/>
+          </outputConnector>
+        </children>
+        <children xsi:type="esb:LogMediator" logLevel="FULL" logSeparator=", ">
+          <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.5/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@inputConnector"/>
+          </outputConnector>
+          <properties propertyName="After db" propertyValue="After db">
+            <propertyExpression prettyName="property expression" propertyName="expression" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+          </properties>
+        </children>
+      </mediatorFlow>
+      <onError prettyName="OnError sequence Key" keyName="OnError sequence Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+    </children>
+  </server>
+</esb:EsbDiagram>

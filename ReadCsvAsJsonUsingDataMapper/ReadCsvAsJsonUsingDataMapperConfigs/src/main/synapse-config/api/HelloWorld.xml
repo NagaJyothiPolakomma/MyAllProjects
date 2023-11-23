@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/helloworld" name="HelloWorld" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <!--   <property expression="//Jsondata/Name" name="name" scope="default" type="STRING"/>-->
+            <log level="custom">
+                <property expression="json-eval($)" name="data"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"Response":"$1"&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:name"/>
+                </args>
+            </payloadFactory>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

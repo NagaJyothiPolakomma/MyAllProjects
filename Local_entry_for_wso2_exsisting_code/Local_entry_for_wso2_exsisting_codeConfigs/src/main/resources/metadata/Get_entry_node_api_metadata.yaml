@@ -1,0 +1,11 @@
+---
+key: "Get_entry_node_api-1.0.0"
+name : "Get_entry_node_api"
+displayName : "Get_entry_node_api"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/getentry"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/contarctcreateapi" name="CONTRACT_CREATE_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <header name="Action" scope="default" value="urn:contractNew"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:con="http://ericsson.com/services/ws_CIL_7/contractcreate" xmlns:con1="http://ericsson.com/services/ws_CIL_7/contractnew" xmlns:con2="http://ericsson.com/services/ws_CIL_7/contractdeviceadd" xmlns:con3="http://ericsson.com/services/ws_CIL_7/contractservicesadd" xmlns:con4="http://ericsson.com/services/ws_CIL_7/contractserviceresourceswrite" xmlns:con5="http://ericsson.com/services/ws_CIL_7/contractserviceparameterswrite" xmlns:con6="http://ericsson.com/services/ws_CIL_7/contractwrite" xmlns:ses="http://ericsson.com/services/ws_CIL_7/sessionchange" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Header>
+                            <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                                <wsse:UsernameToken wsu:Id="UsernameToken-F2F6BE46D3448913B916944362871831">
+                                    <wsse:Username>ADMX</wsse:Username>
+                                    <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ADMX</wsse:Password>
+                                </wsse:UsernameToken>
+                            </wsse:Security>
+                        </soapenv:Header>
+                        <soapenv:Body>
+                            <con:contractCreateRequest>
+                                <con:inputAttributes>
+                                    <con:contractNew>
+                                        <con1:csId>$1</con1:csId>
+                                        <con1:sccode>$2</con1:sccode>
+                                        <con1:submId>$3</con1:submId>
+                                        <con1:plcode>$4</con1:plcode>
+                                        <con1:rpcode>$5</con1:rpcode>
+                                    </con:contractNew>
+                                </con:inputAttributes>
+                                <con:sessionChangeRequest>
+                                    <ses:values>
+                                        <ses:item>
+                                            <ses:key>BU_ID</ses:key>
+                                            <ses:value>2</ses:value>
+                                        </ses:item>
+                                    </ses:values>
+                                </con:sessionChangeRequest>
+                            </con:contractCreateRequest>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="json" expression="$.csId"/>
+                    <arg evaluator="json" expression="$.sccode"/>
+                    <arg evaluator="json" expression="$.submId"/>
+                    <arg evaluator="json" expression="$.plcode"/>
+                    <arg evaluator="json" expression="$.rpcode"/>
+                </args>
+            </payloadFactory>
+            <call>
+                <endpoint>
+                    <address format="soap11" uri="http://172.16.110.237:4080/wsi/services">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </address>
+                </endpoint>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

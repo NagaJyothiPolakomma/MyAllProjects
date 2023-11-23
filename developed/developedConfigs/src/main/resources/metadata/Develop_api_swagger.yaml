@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: Develop_api
+  description: API Definition of Develop_api
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/develop
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="sample" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/sample.xml</file>
+    </artifact>
+    <artifact name="sample_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/sample_swagger.yaml</file>
+    </artifact>
+    <artifact name="sample_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/sample_metadata.yaml</file>
+    </artifact>
+    <artifact name="SAMPLESEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SAMPLESEQ.xml</file>
+    </artifact>
+    <artifact name="SAMPLE_LOCAL" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/SAMPLE_LOCAL.xml</file>
+    </artifact>
+    <artifact name="local" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/local.xml</file>
+    </artifact>
+    <artifact name="local_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/local_swagger.yaml</file>
+    </artifact>
+    <artifact name="local_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/local_metadata.yaml</file>
+    </artifact>
+    <artifact name="SAMPLE_LOCAL_FILE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/SAMPLE_LOCAL_FILE.xml</file>
+    </artifact>
+</artifacts>

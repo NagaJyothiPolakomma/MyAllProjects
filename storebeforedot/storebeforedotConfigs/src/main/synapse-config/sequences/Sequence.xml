@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full"/>
+    <property expression="$trp:FILE_NAME" name="filename" scope="default" type="STRING"/>
+    <log level="custom">
+        <property expression="$ctx:filename" name="filename"/>
+    </log>
+    <property expression="fn:substring-before(get-property('filename'), '.')" name="FilePartBeforeDot" scope="default" type="STRING"/>
+    <!-- <script language="js"><![CDATA[var filename=me.getProperty('filename');
+var filebeforedot=filename.split('.');
+mc.setProperty('FilePartBeforeDot',filebeforedot);]]></script>-->
+    <log level="custom">
+        <property expression="$ctx:FilePartBeforeDot" name="FilePartBeforeDot"/>
+    </log>
+    <dbreport>
+        <connection>
+            <pool>
+                <driver>com.mysql.jdbc.Driver</driver>
+                <url>jdbc:mysql://localhost:3306/vyshu?useSSL=false</url>
+                <user>root</user>
+                <password>Jyothi@2000</password>
+            </pool>
+        </connection>
+        <statement>
+            <sql><![CDATA[insert into StoreBeforeDotData(beforedotdata) values(?);]]></sql>
+            <parameter expression="$ctx:FilePartBeforeDot" type="VARCHAR"/>
+        </statement>
+    </dbreport>
+</sequence>

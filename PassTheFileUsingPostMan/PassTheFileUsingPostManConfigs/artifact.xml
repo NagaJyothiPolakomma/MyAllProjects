@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="PassTheFileUsingPostMan" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/PassTheFileUsingPostMan.xml</file>
+    </artifact>
+    <artifact name="PassTheFileUsingPostMan_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/PassTheFileUsingPostMan_swagger.yaml</file>
+    </artifact>
+    <artifact name="PassTheFileUsingPostMan_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/PassTheFileUsingPostMan_metadata.yaml</file>
+    </artifact>
+    <artifact name="passthefile_con" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>\src\main\synapse-config\local-entries\passthefile_con.xml</file>
+    </artifact>
+</artifacts>

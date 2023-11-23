@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full"/>
+    <property expression="$trp:FILE_NAME" name="filename" scope="default" type="STRING"/>
+    <script language="js"><![CDATA[var uuid=java.util.UUID.randomUUID().toString();
+mc.setProperty("uuid",uuid);]]></script>
+    <log level="custom">
+        <property expression="$ctx:filename" name="filename"/>
+    </log>
+    <log>
+        <property name="enter into db" value="enter into db"/>
+    </log>
+    <dbreport>
+        <connection>
+            <pool>
+                <driver>com.mysql.jdbc.Driver</driver>
+                <url>jdbc:mysql://localhost:3306/vyshu</url>
+                <user>root</user>
+                <password>Jyothi@2000</password>
+            </pool>
+        </connection>
+        <statement>
+            <sql><![CDATA[insert into filetrack(uuid,filename,sysdate) values(?,?,NOW());]]></sql>
+            <parameter expression="$trp:uuid" type="VARCHAR"/>
+            <parameter expression="$ctx:filename" type="VARCHAR"/>
+        </statement>
+    </dbreport>
+    <log level="full">
+        <property name="After db" value="After db"/>
+    </log>
+</sequence>

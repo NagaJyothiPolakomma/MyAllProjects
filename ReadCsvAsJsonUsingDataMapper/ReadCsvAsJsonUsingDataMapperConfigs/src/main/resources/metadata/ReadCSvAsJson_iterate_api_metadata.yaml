@@ -1,0 +1,11 @@
+---
+key: "ReadCSvAsJson_iterate_api-1.0.0"
+name : "ReadCSvAsJson_iterate_api"
+displayName : "ReadCSvAsJson_iterate_api"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/iterate"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

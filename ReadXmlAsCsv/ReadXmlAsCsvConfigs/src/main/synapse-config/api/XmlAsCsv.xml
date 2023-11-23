@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/xmlascsv" name="XmlAsCsv" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <file.read configKey="XmlAsCsv_con">
+                <path>E:/jsondata/input.xml</path>
+                <readMode>Complete File</readMode>
+                <startLineNum>0</startLineNum>
+                <endLineNum>0</endLineNum>
+                <lineNum>0</lineNum>
+                <includeResultTo>Message Body</includeResultTo>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+            </file.read>
+            <datamapper config="gov:datamapper/ReadXmlAsCsv.dmc" inputSchema="gov:datamapper/ReadXmlAsCsv_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/ReadXmlAsCsv_outputSchema.json" outputType="CSV" xsltStyleSheet="gov:datamapper/ReadXmlAsCsv_xsltStyleSheet.xml"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

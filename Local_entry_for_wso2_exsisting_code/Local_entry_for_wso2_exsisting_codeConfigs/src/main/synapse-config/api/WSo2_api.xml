@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/ws" name="WSo2_api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log/>
+            <property expression="get-property('SFDC_SystemProperties_LE')" name="SystemCredentials" scope="default" type="OM"/>
+            <log level="custom">
+                <property expression="$ctx:SystemCredentials" name="SystemCredentials"/>
+            </log>
+            <propertyGroup>
+                <property expression="$ctx:SystemCredentials//*[local-name()='ServiceCredentials']/Username" name="Username" scope="default" type="STRING"/>
+                <property expression="$ctx:SystemCredentials//*[local-name()='ServiceCredentials']/Password" name="Password" scope="default" type="STRING"/>
+            </propertyGroup>
+            <log level="custom">
+                <property expression="$ctx:Username" name="Username"/>
+                <property expression="$ctx:Password" name="Password"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="RabbitMQSEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="MEssage " value="Before Sequence log"/>
+    </log>
+    <call>
+        <endpoint key="calci"/>
+    </call>
+    <log level="custom">
+        <property name="Message" value="After SEquence log"/>
+    </log>
+    <drop/>
+</sequence>

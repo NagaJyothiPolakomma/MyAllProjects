@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/postman" name="PassTheFileUsingPostMan" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/upload">
+        <inSequence>
+            <propertyGroup>
+                <property name="messageType" scope="axis2" type="STRING" value="multipart/form-data"/>
+                <property expression="$body" name="filePart" scope="default" type="STRING"/>
+                <property expression="//details" name="base64EncodedContent" scope="default" type="STRING"/>
+                <property expression="base64Decode(get-property('base64EncodedContent'))" name="decodedContent" scope="default" type="STRING"/>
+                <property expression="$body//*[local-name()='details']/@filename" name="filename" scope="default" type="STRING"/>
+                <property expression="$body//*[local-name()='details']/@content-type" name="content-type" scope="default" type="STRING"/>
+            </propertyGroup>
+            <log level="custom">
+                <property expression="get-property('filePart')" name="File Content"/>
+                <property expression="$ctx:decodedContent" name="decode"/>
+            </log>
+            <log level="custom">
+                <property expression="$ctx:filename" name="file"/>
+                <property expression="$ctx:content-type" name="content-type"/>
+            </log>
+            <file.write configKey="passthefile_con">
+                <filePath>{fn:concat('/',$ctx:filename)}</filePath>
+                <contentOrExpression>{$ctx:decodedContent}</contentOrExpression>
+                <mimeType>Automatic</mimeType>
+                <compress>false</compress>
+                <writeMode>Create New</writeMode>
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>false</appendNewLine>
+                <enableLock>false</enableLock>
+                <includeResultTo>Message Property</includeResultTo>
+                <resultPropertyName>jyothi</resultPropertyName>
+                <updateLastModified>true</updateLastModified>
+            </file.write>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"success":"$1"&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:jyothi"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

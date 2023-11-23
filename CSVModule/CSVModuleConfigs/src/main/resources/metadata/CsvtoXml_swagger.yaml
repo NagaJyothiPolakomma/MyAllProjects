@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: CsvtoXml
+  description: API Definition of CsvtoXml
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/csvtoxml
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_0-bs4GaZEe6oOqb-HTIlJw" type="DataMapper" name="ReadXmlAsCsv.datamapper_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0-bs4WaZEe6oOqb-HTIlJw"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="ReadXmlAsCsv.datamapper#/"/>
+</notation:Diagram>

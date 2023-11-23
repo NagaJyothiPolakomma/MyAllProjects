@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_UF7GgFg6Ee6XJbLaI-s2OA" type="Esb" name="RabbitCalci_API" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_UHHZUFg6Ee6XJbLaI-s2OA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_UHHZVVg6Ee6XJbLaI-s2OA" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_Yh_CIFg6Ee6XJbLaI-s2OA" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Yh_CIlg6Ee6XJbLaI-s2OA" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_YiJaMFg6Ee6XJbLaI-s2OA" type="3669">
+            <children xmi:type="notation:Node" xmi:id="_YiNroFg6Ee6XJbLaI-s2OA" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiNroVg6Ee6XJbLaI-s2OA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_YiNrolg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_YiNro1g6Ee6XJbLaI-s2OA"/>
+              <element xmi:type="esb:APIResourceInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@inputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiNrpFg6Ee6XJbLaI-s2OA" x="86" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_YiOSsFg6Ee6XJbLaI-s2OA" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiOSsVg6Ee6XJbLaI-s2OA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_YiOSslg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_YiOSs1g6Ee6XJbLaI-s2OA"/>
+              <element xmi:type="esb:APIResourceOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@outputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiOStFg6Ee6XJbLaI-s2OA" x="86" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_YiOStVg6Ee6XJbLaI-s2OA" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiOStlg6Ee6XJbLaI-s2OA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_YiOSt1g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_YiOSuFg6Ee6XJbLaI-s2OA"/>
+              <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiOSuVg6Ee6XJbLaI-s2OA" x="110" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_YiO5wFg6Ee6XJbLaI-s2OA" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiO5wVg6Ee6XJbLaI-s2OA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_YiO5wlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_YiO5w1g6Ee6XJbLaI-s2OA"/>
+              <element xmi:type="esb:APIResourceFaultInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiO5xFg6Ee6XJbLaI-s2OA" x="86" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_YiO5xVg6Ee6XJbLaI-s2OA" type="3673">
+              <children xmi:type="notation:Node" xmi:id="_YiUZUFg6Ee6XJbLaI-s2OA" type="3487">
+                <children xmi:type="notation:Node" xmi:id="_YiWOgFg6Ee6XJbLaI-s2OA" type="3608">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_YiWOhVg6Ee6XJbLaI-s2OA" type="7034">
+                    <children xmi:type="notation:Node" xmi:id="_YiqXkFg6Ee6XJbLaI-s2OA" type="3516">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_Yisz0Fg6Ee6XJbLaI-s2OA" type="5183"/>
+                      <children xmi:type="notation:Node" xmi:id="_YixsUFg6Ee6XJbLaI-s2OA" type="3100">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YixsUVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YixsUlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YixsU1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:HeaderMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YixsVFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YiyTYFg6Ee6XJbLaI-s2OA" type="3101">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiyTYVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YiyTYlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YiyTY1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:HeaderMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiyTZFg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiqXkVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_YiqXklg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_YiqXk1g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:HeaderMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiqXlFg6Ee6XJbLaI-s2OA" x="25" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_Yi9SgFg6Ee6XJbLaI-s2OA" type="3492">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_Yi95klg6Ee6XJbLaI-s2OA" type="5167"/>
+                      <children xmi:type="notation:Node" xmi:id="_YjCyEFg6Ee6XJbLaI-s2OA" type="3033">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjCyEVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YjCyElg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YjCyE1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjCyFFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YjDZIFg6Ee6XJbLaI-s2OA" type="3034">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjDZIVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YjDZIlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YjDZI1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjDZJFg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_Yi9SgVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_Yi9Sglg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_Yi95kFg6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:PropertyMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yi95kVg6Ee6XJbLaI-s2OA" x="149" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_YjRbkFg6Ee6XJbLaI-s2OA" type="3492">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_YjSCoFg6Ee6XJbLaI-s2OA" type="5167"/>
+                      <children xmi:type="notation:Node" xmi:id="_YjW7IFg6Ee6XJbLaI-s2OA" type="3033">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjW7IVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YjW7Ilg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YjW7I1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjW7JFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YjXiMFg6Ee6XJbLaI-s2OA" type="3034">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjXiMVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YjXiMlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YjXiM1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjXiNFg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjRbkVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_YjRbklg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_YjRbk1g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:PropertyMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjRblFg6Ee6XJbLaI-s2OA" x="273" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_YjkWgFg6Ee6XJbLaI-s2OA" type="3597">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_Yjk9kFg6Ee6XJbLaI-s2OA" type="5191"/>
+                      <children xmi:type="notation:Node" xmi:id="_YjqdIFg6Ee6XJbLaI-s2OA" type="3598">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjqdIVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YjqdIlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YjqdI1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PayloadFactoryMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjqdJFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YjrEMFg6Ee6XJbLaI-s2OA" type="3599">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjrEMVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YjrEMlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YjrEM1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PayloadFactoryMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjrENFg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_YjkWgVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_YjkWglg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_YjkWg1g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:PayloadFactoryMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YjkWhFg6Ee6XJbLaI-s2OA" x="397" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_Yj3RcFg6Ee6XJbLaI-s2OA" type="3588">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_Yj3RdVg6Ee6XJbLaI-s2OA" type="5188"/>
+                      <children xmi:type="notation:Node" xmi:id="_YkhYwFg6Ee6XJbLaI-s2OA" type="3589">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YkhYwVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YkhYwlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YkhYw1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:StoreMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YkhYxFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_Ykh_0Fg6Ee6XJbLaI-s2OA" type="3590">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_Ykh_0Vg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_Ykh_0lg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_Ykh_01g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:StoreMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ykh_1Fg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_Yj3RcVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_Yj3Rclg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_Yj3Rc1g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:StoreMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yj3RdFg6Ee6XJbLaI-s2OA" x="521" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_Yk7BYFg6Ee6XJbLaI-s2OA" type="3495">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_Yk7BZVg6Ee6XJbLaI-s2OA" type="5168"/>
+                      <children xmi:type="notation:Node" xmi:id="_Yk_54Fg6Ee6XJbLaI-s2OA" type="3018">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_Yk_54Vg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_Yk_54lg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_Yk_541g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:LogMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.5/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yk_55Fg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_Yk_55Vg6Ee6XJbLaI-s2OA" type="3019">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_Yk_55lg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_Yk_551g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_Yk_56Fg6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:LogMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.5/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yk_56Vg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_Yk7BYVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_Yk7BYlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_Yk7BY1g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:LogMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.5"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yk7BZFg6Ee6XJbLaI-s2OA" x="645" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_YlJq4Fg6Ee6XJbLaI-s2OA" type="3492">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_YlKR8Fg6Ee6XJbLaI-s2OA" type="5167"/>
+                      <children xmi:type="notation:Node" xmi:id="_YlPKcFg6Ee6XJbLaI-s2OA" type="3033">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlPKcVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YlPKclg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YlPKc1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlPKdFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YlPKdVg6Ee6XJbLaI-s2OA" type="3034">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlPKdlg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YlPKd1g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YlPKeFg6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlPKeVg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlJq4Vg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_YlJq4lg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_YlJq41g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:PropertyMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlJq5Fg6Ee6XJbLaI-s2OA" x="769" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_Ylcl0Fg6Ee6XJbLaI-s2OA" type="3742">
+                      <children xmi:type="notation:Node" xmi:id="_YlfpIFg6Ee6XJbLaI-s2OA" type="3743">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlfpIVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YlfpIlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YlfpI1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:CallMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlfpJFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YlfpJVg6Ee6XJbLaI-s2OA" type="3744">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlfpJlg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YlfpJ1g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YlfpKFg6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:CallMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlfpKVg6Ee6XJbLaI-s2OA" x="-11" y="-9"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YlgQMFg6Ee6XJbLaI-s2OA" type="3745">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlgQMVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YlgQMlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YlgQM1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:CallMediatorEndpointOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@endpointOutputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlgQNFg6Ee6XJbLaI-s2OA"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YlgQNVg6Ee6XJbLaI-s2OA" type="3746">
+                        <children xmi:type="notation:DecorationNode" xmi:id="_Ylg3QFg6Ee6XJbLaI-s2OA" type="7047">
+                          <children xmi:type="notation:Node" xmi:id="_YlsdcFg6Ee6XJbLaI-s2OA" type="3610">
+                            <children xmi:type="notation:DecorationNode" xmi:id="_YlsddVg6Ee6XJbLaI-s2OA" type="5199"/>
+                            <children xmi:type="notation:Node" xmi:id="_YlxV8Fg6Ee6XJbLaI-s2OA" type="3030">
+                              <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlxV8Vg6Ee6XJbLaI-s2OA"/>
+                              <styles xmi:type="notation:FontStyle" xmi:id="_YlxV8lg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                              <styles xmi:type="notation:LineStyle" xmi:id="_YlxV81g6Ee6XJbLaI-s2OA"/>
+                              <element xmi:type="esb:AddressEndPointInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@mediatorFlow/@children.0/@inputConnector"/>
+                              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlxV9Fg6Ee6XJbLaI-s2OA"/>
+                            </children>
+                            <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlsdcVg6Ee6XJbLaI-s2OA"/>
+                            <styles xmi:type="notation:FontStyle" xmi:id="_Ylsdclg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                            <styles xmi:type="notation:LineStyle" xmi:id="_Ylsdc1g6Ee6XJbLaI-s2OA"/>
+                            <element xmi:type="esb:AddressEndPoint" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@mediatorFlow/@children.0"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlsddFg6Ee6XJbLaI-s2OA" x="5" y="103"/>
+                          </children>
+                          <styles xmi:type="notation:TitleStyle" xmi:id="_Ylg3QVg6Ee6XJbLaI-s2OA" showTitle="true"/>
+                        </children>
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YlgQNlg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YlgQN1g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YlgQOFg6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:MediatorFlow" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@mediatorFlow"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YlgQOVg6Ee6XJbLaI-s2OA"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_Ylcl0Vg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_Ylcl0lg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_Ylcl01g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:CallMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ylcl1Fg6Ee6XJbLaI-s2OA" x="893" y="38" width="170" height="100"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_Yl8VEFg6Ee6XJbLaI-s2OA" type="3492">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_Yl8VFVg6Ee6XJbLaI-s2OA" type="5167"/>
+                      <children xmi:type="notation:Node" xmi:id="_YmAmgFg6Ee6XJbLaI-s2OA" type="3033">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YmAmgVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YmAmglg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YmAmg1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.8/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YmAmhFg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YmBNkFg6Ee6XJbLaI-s2OA" type="3034">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YmBNkVg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YmBNklg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YmBNk1g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:PropertyMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.8/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YmBNlFg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_Yl8VEVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_Yl8VElg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_Yl8VE1g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:PropertyMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yl8VFFg6Ee6XJbLaI-s2OA" x="1103" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_YmS6YFg6Ee6XJbLaI-s2OA" type="3739">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_YmThcFg6Ee6XJbLaI-s2OA" type="5209"/>
+                      <children xmi:type="notation:Node" xmi:id="_YmXy4Fg6Ee6XJbLaI-s2OA" type="3740">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YmXy4Vg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YmXy4lg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YmXy41g6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:RespondMediatorInputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.9/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YmXy5Fg6Ee6XJbLaI-s2OA" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_YmXy5Vg6Ee6XJbLaI-s2OA" type="3741">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_YmXy5lg6Ee6XJbLaI-s2OA"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_YmXy51g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_YmXy6Fg6Ee6XJbLaI-s2OA"/>
+                        <element xmi:type="esb:RespondMediatorOutputConnector" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.9/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YmXy6Vg6Ee6XJbLaI-s2OA" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_YmS6YVg6Ee6XJbLaI-s2OA"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_YmS6Ylg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_YmS6Y1g6Ee6XJbLaI-s2OA"/>
+                      <element xmi:type="esb:RespondMediator" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.9"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YmS6ZFg6Ee6XJbLaI-s2OA" x="1227" y="38" width="84" height="115"/>
+                    </children>
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_YiWOhlg6Ee6XJbLaI-s2OA" showTitle="true"/>
+                  </children>
+                  <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiWOgVg6Ee6XJbLaI-s2OA"/>
+                  <styles xmi:type="notation:FontStyle" xmi:id="_YiWOglg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                  <styles xmi:type="notation:LineStyle" xmi:id="_YiWOg1g6Ee6XJbLaI-s2OA"/>
+                  <element xmi:type="esb:MediatorFlow" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiWOhFg6Ee6XJbLaI-s2OA"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiUZUVg6Ee6XJbLaI-s2OA"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_YiUZUlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_YiUZU1g6Ee6XJbLaI-s2OA"/>
+                <element xmi:type="esb:ProxyServiceSequenceAndEndpointContainer" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiUZVFg6Ee6XJbLaI-s2OA"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_YiUZVVg6Ee6XJbLaI-s2OA" type="3488">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiUZVlg6Ee6XJbLaI-s2OA"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_YiUZV1g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_YiUZWFg6Ee6XJbLaI-s2OA"/>
+                <element xmi:type="esb:ProxyServiceFaultContainer" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@faultContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiUZWVg6Ee6XJbLaI-s2OA"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiO5xlg6Ee6XJbLaI-s2OA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_YiO5x1g6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_YiO5yFg6Ee6XJbLaI-s2OA"/>
+              <element xmi:type="esb:ProxyServiceContainer" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiO5yVg6Ee6XJbLaI-s2OA"/>
+            </children>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_YiJaMVg6Ee6XJbLaI-s2OA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_YiJaMlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_YiJaM1g6Ee6XJbLaI-s2OA"/>
+            <element xmi:type="esb:APIResource" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiJaNFg6Ee6XJbLaI-s2OA" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="RabbitCalci_API.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yh_CIVg6Ee6XJbLaI-s2OA" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_UHHZUVg6Ee6XJbLaI-s2OA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_UHHZUlg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_UHHZU1g6Ee6XJbLaI-s2OA"/>
+    <element xmi:type="esb:EsbServer" href="RabbitCalci_API.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UHHZVFg6Ee6XJbLaI-s2OA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_UF7GgVg6Ee6XJbLaI-s2OA"/>
+  <element xmi:type="esb:EsbDiagram" href="RabbitCalci_API.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_YmpfsFg6Ee6XJbLaI-s2OA" type="4001" source="_YiOSsFg6Ee6XJbLaI-s2OA" target="_YixsUFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_YmpfsVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ympfslg6Ee6XJbLaI-s2OA" points="[6, 5, -5, 0]$[5, 0, -6, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Ymu_QFg6Ee6XJbLaI-s2OA" type="4001" source="_YiyTYFg6Ee6XJbLaI-s2OA" target="_YjCyEFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Ymu_QVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ymu_Qlg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Ym0e0Fg6Ee6XJbLaI-s2OA" type="4001" source="_YjDZIFg6Ee6XJbLaI-s2OA" target="_YjW7IFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Ym0e0Vg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ym0e0lg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Ym5-YFg6Ee6XJbLaI-s2OA" type="4001" source="_YjXiMFg6Ee6XJbLaI-s2OA" target="_YjqdIFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Ym5-YVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ym5-Ylg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Ym_d8Fg6Ee6XJbLaI-s2OA" type="4001" source="_YjrEMFg6Ee6XJbLaI-s2OA" target="_YkhYwFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Ym_d8Vg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ym_d8lg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_YnGLoFg6Ee6XJbLaI-s2OA" type="4001" source="_Ykh_0Fg6Ee6XJbLaI-s2OA" target="_Yk_54Fg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_YnGLoVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YnGLolg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_YnLrMFg6Ee6XJbLaI-s2OA" type="4001" source="_Yk_55Vg6Ee6XJbLaI-s2OA" target="_YlPKcFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_YnLrMVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.5/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YnLrMlg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_YnQjsFg6Ee6XJbLaI-s2OA" type="4001" source="_YlPKdVg6Ee6XJbLaI-s2OA" target="_YlfpIFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_YnQjsVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.6/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YnQjslg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_YnVcMFg6Ee6XJbLaI-s2OA" type="4001" source="_YlfpJVg6Ee6XJbLaI-s2OA" target="_YmAmgFg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_YnVcMVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YnVcMlg6Ee6XJbLaI-s2OA" points="[-11, 0, -6, 0]$[1, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Yna7wFg6Ee6XJbLaI-s2OA" type="4001" source="_YmBNkFg6Ee6XJbLaI-s2OA" target="_YmXy4Fg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Yna7wVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.8/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Yna7wlg6Ee6XJbLaI-s2OA" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aTYuUFg6Ee6XJbLaI-s2OA" type="4001" source="_YlgQMFg6Ee6XJbLaI-s2OA" target="_YlxV8Fg6Ee6XJbLaI-s2OA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aTYuUVg6Ee6XJbLaI-s2OA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="RabbitCalci_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.7/@endpointOutputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aTYuUlg6Ee6XJbLaI-s2OA" points="[2, 9, -31, -110]$[31, 114, -2, -5]"/>
+  </edges>
+</notation:Diagram>

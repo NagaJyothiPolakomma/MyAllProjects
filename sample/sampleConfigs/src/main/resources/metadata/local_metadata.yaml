@@ -1,0 +1,11 @@
+---
+key: "local-1.0.0"
+name : "local"
+displayName : "local"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/local"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

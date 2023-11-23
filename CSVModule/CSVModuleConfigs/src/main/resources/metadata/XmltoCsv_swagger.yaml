@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: XmltoCsv
+  description: API Definition of XmltoCsv
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/xmltocsv
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

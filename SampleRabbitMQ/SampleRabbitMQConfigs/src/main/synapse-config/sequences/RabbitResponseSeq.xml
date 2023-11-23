@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="RabbitResponseSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full">
+        <property name="Response" value="Store the response"/>
+    </log>
+    <call>
+        <endpoint key="Response_EP"/>
+    </call>
+    <log/>
+</sequence>

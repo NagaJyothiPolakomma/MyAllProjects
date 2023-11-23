@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/readcsvasjson" name="ReadCsvAsJson_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <file.read configKey="ReadCsvAsJson_Con">
+                <path>E:/jsondata/details.csv</path>
+                <readMode>Complete File</readMode>
+                <startLineNum>0</startLineNum>
+                <endLineNum>0</endLineNum>
+                <lineNum>0</lineNum>
+                <contentType>text/plain</contentType>
+                <includeResultTo>Message Body</includeResultTo>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+            </file.read>
+            <datamapper config="gov:datamapper/ReadCSvAsJson.dmc" inputSchema="gov:datamapper/ReadCSvAsJson_inputSchema.json" inputType="CSV" outputSchema="gov:datamapper/ReadCSvAsJson_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/ReadCSvAsJson_xsltStyleSheet.xml"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,11 @@
+---
+key: "Java_code_for_Dynamic_query-1.0.0"
+name : "Java_code_for_Dynamic_query"
+displayName : "Java_code_for_Dynamic_query"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/javacode"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

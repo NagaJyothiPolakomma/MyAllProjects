@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dbajay" name="DB_AJAY" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <class name="com.oreedoo.dbMediator"/>
+            <log level="custom">
+                <property expression="$ctx:ResultSet" name="After Class"/>
+            </log>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
